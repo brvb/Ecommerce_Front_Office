@@ -16,9 +16,11 @@
                     <p class="number">3</p>
                 </div>
                 <div class="dropdown icon">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                    <p class="number">2</p>
-                    <div class="dropdown-content">
+                    <span id="dropdown-cart">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <p class="number">2</p>
+                    </span>
+                    <div class="dropdown-content" id="dropdown-content-container">
                         <div class="cart-list">
 
                             <div class="product-widget">
@@ -63,7 +65,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 <div class="navigation container-fluid" id="sidebar">
         <!-- container -->
@@ -71,7 +73,7 @@
             <!-- responsive-nav -->
             <div id="responsive-nav">
                 <!-- NAV -->
-                <ul class="main-nav nav navbar-nav">
+                <ul class="main-nav navbar-nav">
                     <li class="active"><a href="#">Home</a></li>
                     <li><a href="#">Hot Deals</a></li>
                     <li><a href="#">Categories</a></li>
