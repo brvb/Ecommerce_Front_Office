@@ -27,10 +27,13 @@
         <div class="header">
             @include('layouts.navbar')
         </div>
-        
+
 
         <div class="container">
             @yield('pagina-main')
+        </div>
+        <div class="container">
+            @yield('pagina-cart')
         </div>
         <div class="container">
             @yield('pagina-product')

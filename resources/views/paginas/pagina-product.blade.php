@@ -2,6 +2,6 @@
 
 @section('pagina-product')
 <div>
-  Products here
+    pagina-product
 </div>
 @endsection

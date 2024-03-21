@@ -120,9 +120,11 @@ ul, ol {
         flex-direction: row;
         flex-direction: column !important;
         padding: 20px 0;
+        min-width: 175px;
       }
       .main-nav li{
         margin: 12px 5px !important;
+        padding: 0 !important;
       }
       .main-nav>li>a {
         padding: 20px 0px;
@@ -321,10 +323,10 @@ ul, ol {
   .main-nav{
     display: flex;
     flex-direction: row;
-    padding: 20px 0;
   }
   .main-nav li{
     margin: 0 20px 0 0;
+    padding:20px 0;
   }
   .main-nav>li>a {
     padding: 20px 0px;
@@ -352,3 +354,87 @@ ul, ol {
   }
 
 /* Navbar */
+/* Dropdown Categories */
+.paste-button {
+  position: relative;
+  display: block;
+}
+
+.button {
+  cursor: pointer;
+  border: 0;
+  background: transparent;
+  color: #000000;
+  font-weight: 300;
+}
+.dropdown-contente {
+  position: absolute;
+  display: none;
+  font-size: 13px;
+  z-index: 11;
+  min-width: 200px;
+  margin-top: 20px;
+  background-color: #FFF;
+  border-top: 2px solid var(--ColorPrimaria);
+}
+.dropdown-contente a {
+  padding: 10px;
+  text-decoration: none;
+  display: block;
+  color: #000000;
+
+}
+.paste-button:hover button {
+  border-radius: 15px 15px 0px 0px;
+}
+.paste-button:hover .dropdown-contente {
+  display: block;
+}
+
+.paste-button:hover .button{
+  color: var(--ColorPrimaria);
+}
+
+.dropdown-contente a:hover, .dropdown-contente a:focus, .dropdown-contente a.active>a {
+  color: var(--ColorPrimaria);
+  background-color: transparent;
+}
+
+.dropdown-contente a:after {
+  content: "";
+  display: block;
+  width: 0%;
+  height: 2px;
+  background-color: var(--ColorPrimaria);
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+}
+
+.dropdown-contente a:hover:after, .dropdown-contente a:focus:after, .dropdown-contente a.active>a:after {
+  width: 100%;
+}
+@media only screen and (max-width: 992px){
+  .button {
+    cursor: pointer;
+    color: #ffffff;
+    font-weight: 300;
+  }
+  .dropdown-contente {
+    position: relative;
+    display: none;
+    font-size: 13px;
+    z-index: 11;
+    min-width: 150px;
+    background-color: #ffffff2d;
+    padding-top: 20px;
+    border-radius: 5px;
+  }
+  .dropdown-contente a {
+    padding: 10px;
+    text-decoration: none;
+    display: block;
+    color: #ffffff;
+    transition: 0.1s;
+  }
+}
+/* Dropdown Categories */

@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MasterController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,21 +14,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
-    return view('paginas.pagina-main', ['main' => 'main']);
-})->name('/'); 
+Route::get('/', [MasterController::class, 'mainPage'])->name('/');
 
-Route::get('/product', function () {
-    return view('paginas.pagina-product', ['main' => 'main']);
-})->name('product'); 
 
-Route::get('/checkout', function () {
-    return view('paginas.pagina-checkout', ['main' => 'main']);
-})->name('checkout'); 
+Route::get('/cart', [MasterController::class, 'cartPage'])->name('cart');
 
-Route::get('/filtro-products', function () {
-    return view('paginas.pagina-filtro-products', ['main' => 'main']);
-})->name('filtro-products');
+Route::get('/product', [MasterController::class, 'productPage'])->name('product');
+
+Route::get('/checkout', [MasterController::class, 'checkoutPage'])->name('checkout');
+
+Route::get('/filtro-products', [MasterController::class, 'filtroProductsPage'])->name('filtro-products');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 ])->group(function () {
