@@ -2,7 +2,9 @@
     <div class="container">
         <div class="row" style="justify-content: space-between;align-items: center;justify-content: center;">
             <div class="col-12 col-lg-4 logo-img">
-                <img src="{{ asset('assets/images/logo.png')}}" alt="">
+                <a href="{{ route('/') }}">
+                    <img src="{{ asset('assets/images/logo.png')}}" alt="">
+                </a>
             </div>
             <div class="col-12 col-lg-6">
                 <div class="input-group navbar-search" style="flex-wrap: inherit;display: flex;flex-direction: row;">
@@ -51,8 +53,8 @@
                             <h5>SUBTOTAL: $2940.00</h5>
                         </div>
                         <div class="cart-btns">
-                            <a class="view-cart" href="#">View Cart</a>
-                            <a class="checkout" href="#">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
+                            <a class="view-cart" href="{{ route('product') }}">View Cart</a>
+                            <a class="checkout" href="{{ route('checkout') }}">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -74,13 +76,12 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav navbar-nav">
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">Hot Deals</a></li>
+                    <li class="active"><a href="{{ route('/') }}">Home</a></li>
                     <li><a href="#">Categories</a></li>
-                    <li><a href="#">Laptops</a></li>
-                    <li><a href="#">Smartphones</a></li>
-                    <li><a href="#">Cameras</a></li>
-                    <li><a href="#">Accessories</a></li>
+                    <li><a href="#">Oferta do dia</a></li>
+                    <li><a href="#">Histórico</a></li>
+                    <li><a  href="{{ route('filtro-products') }}">Produtos</a></li>
+                    <li><a href="#">Contacto</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>

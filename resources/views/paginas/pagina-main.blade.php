@@ -1,6 +1,6 @@
-{{-- @extends('welcome')
+@extends('main')
 
-@section('pagina') --}}
+@section('pagina-main')
 <div>
     <div class="section">
         <!-- container -->
@@ -772,4 +772,4 @@
         <!-- /container -->
     </div>
 </div>
-{{-- @endsection --}}
+@endsection
