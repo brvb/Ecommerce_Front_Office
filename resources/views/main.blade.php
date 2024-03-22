@@ -28,7 +28,6 @@
             @include('layouts.navbar')
         </div>
 
-
         <div class="container">
             @yield('pagina-main')
         </div>
@@ -44,7 +43,6 @@
         <div class="container">
             @yield('pagina-filtro-products')
         </div>
-
 
 		<!-- FOOTER -->
 		@include('layouts.footer')

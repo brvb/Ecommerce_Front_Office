@@ -3,14 +3,16 @@
 namespace App\Http\Controllers;
 
 use App\Models\Category;
+use App\Models\Products;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
 {
     public function mainPage()
     {
+        $products = Products::all();
         $categories = Category::all();
-        return view('paginas.pagina-main', compact('categories'));
+        return view('paginas.pagina-main', compact('categories','products'));
     }
     public function cartPage()
     {
