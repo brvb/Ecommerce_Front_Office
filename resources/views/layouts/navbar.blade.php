@@ -30,7 +30,7 @@
                                     <img src="{{ asset('assets/images/product01.png')}}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-name"><a href="{{ route('product') }}">product name goes here</a></h3>
+                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
                                     <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
                                 </div>
                                 <button class="delete"><i class="fa fa-close"></i></button>
@@ -41,7 +41,7 @@
                                     <img src="{{ asset('assets/images/product02.png')}}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-name"><a href="{{ route('product') }}">product name goes here</a></h3>
+                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
                                     <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
                                 </div>
                                 <button class="delete"><i class="fa fa-close"></i></button>
@@ -52,7 +52,7 @@
                                     <img src="{{ asset('assets/images/product01.png')}}" alt="">
                                 </div>
                                 <div class="product-body">
-                                    <h3 class="product-name"><a href="{{ route('product') }}">product name goes here</a></h3>
+                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
                                     <h4 class="product-price"><span class="qty">2x</span>$980.00</h4>
                                 </div>
                                 <button class="delete"><i class="fa fa-close"></i></button>

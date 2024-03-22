@@ -19,7 +19,9 @@ Route::get('/', [MasterController::class, 'mainPage'])->name('/');
 
 Route::get('/cart', [MasterController::class, 'cartPage'])->name('cart');
 
-Route::get('/product', [MasterController::class, 'productPage'])->name('product');
+
+Route::get('/product/{id}', [MasterController::class, 'productPage'])->name('product');
+Route::get('/product-details/{id}', [MasterController::class, 'productDetails']);
 
 Route::get('/checkout', [MasterController::class, 'checkoutPage'])->name('checkout');
 

@@ -129,18 +129,41 @@
                                                 </del>
                                             </h4>
                                             <div class="product-rating">
-                                            @for($i = 1; $i <= 5; $i++)
-                                                @if($i <= $product->product_rating)
-                                                    <i class="fa fa-star"></i>
-                                                @else
-                                                    <i class="far fa-star"></i>
-                                                @endif
-                                            @endfor
+                                            @php
+
+                                                $averageRating = 0;
+                                                $totalReviews = 0;
+
+                                                foreach($reviews as $review) {
+                                                    if($review->product_id == $product->id) {
+                                                        
+                                                        $averageRating += $review->product_rating;
+                                                        $totalReviews++;
+                                                    }
+                                                }
+  
+                                                if($totalReviews > 0) {
+                                                    $averageRating = $averageRating / $totalReviews;
+                                                } 
+                                                $averageRating = intval($averageRating);
+                                            @endphp
+                                            
+                                            @if($totalReviews == 0)
+                                               
+                                            @else
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if($i <= $averageRating )
+                                                        <i class="fa fa-star"></i>
+                                                    @else
+                                                        <i class="far fa-star"></i>
+                                                    @endif
+                                                @endfor
+                                            @endif
                                             </div>
                                             <div class="product-btns">
                                                 <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                                 <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                <button class="quick-view"><a href="{{route('product',$product->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
@@ -246,6 +269,7 @@
                                     @foreach($products as $product)
                                    
                                     <div class="product">
+                                    <a href="{{route('product',$product->id)}}"></a>
                                         <div class="product-img">
                                             <img src="{{ asset('./assets/images/product01.png') }}" alt="">
                                             <div class="product-label">
@@ -282,22 +306,49 @@
                                                 </del>
                                             </h4>
                                             <div class="product-rating">
-                                            @for($i = 1; $i <= 5; $i++)
-                                                @if($i <= $product->product_rating)
-                                                    <i class="fa fa-star"></i>
-                                                @else
-                                                    <i class="far fa-star"></i>
-                                                @endif
-                                            @endfor
+                                            
+                                            @php
+
+                                                $averageRating = 0;
+                                                $totalReviews = 0;
+
+                                                foreach($reviews as $review) {
+                                                    if($review->product_id == $product->id) {
+                                                        
+                                                        $averageRating += $review->product_rating;
+                                                        $totalReviews++;
+                                                    }
+                                                }
+  
+                                                if($totalReviews > 0) {
+                                                    $averageRating = $averageRating / $totalReviews;
+                                                } 
+                                                $averageRating = intval($averageRating);
+                                            @endphp
+                                            
+                                            @if($totalReviews == 0)
+                                               
+                                            @else
+                                                @for($i = 1; $i <= 5; $i++)
+                                                    @if($i <= $averageRating )
+                                                        <i class="fa fa-star"></i>
+                                                    @else
+                                                        <i class="far fa-star"></i>
+                                                    @endif
+                                                @endfor
+                                            @endif
                                             </div>
                                             <div class="product-btns">
                                                 <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
                                                 <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                                <button class="quick-view"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></button>
+                                                <button class="quick-view"><a href="{{route('product',$product->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" data-product="{{ $product->id }}">
+                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                        </button>
+
                                         </div>
                                     </div>
                                     @endforeach
@@ -324,4 +375,34 @@
         </div>
     </div>
 </div>
+<script>
+    var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+    addToCartButtons.forEach(function(button) {
+        button.addEventListener('click', function(event) {
+            var productId = button.getAttribute('data-product');
+            
+            // Fazer uma solicitação AJAX para buscar os detalhes do produto do servidor
+            $.ajax({
+                url: '/product-details/' + productId, // Rota para buscar os detalhes do produto
+                method: 'GET',
+                success: function(response) {
+                    var productDetails = response; // Os detalhes do produto retornados pelo servidor
+                    // Armazenar os detalhes do produto no LocalStorage
+                    console.log(productDetails);
+                    localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
+                    alert('Produto adicionado ao carrinho!');
+                },
+                error: function(xhr, status, error) {
+                    console.error(error); // Lidar com erros, se houver
+                }
+            });
+
+            event.preventDefault();
+        });
+    });
+</script>
+
+</script>
+
 @endsection
