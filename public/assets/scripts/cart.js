@@ -26,3 +26,108 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 });
+
+var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
+
+addToCartButtons.forEach(function(button) {
+    button.addEventListener('click', function(event) {
+        var productId = button.getAttribute('data-product');
+        
+        $.ajax({
+            url: '/product-details/' + productId,
+            method: 'GET',
+            success: function(response) {
+                var productDetails = response;
+                
+                localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
+                renderProductInCart(productId, productDetails);
+                alert('Produto adicionado ao carrinho!');
+            },
+            error: function(xhr, status, error) {
+                console.error(error);
+            }
+        });
+
+        event.preventDefault();
+    });
+});
+// JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    // Recuperar todos os itens do carrinho do local storage
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith('cartProduct_')) {
+            var productId = key.replace('cartProduct_', '');
+            var productDetails = JSON.parse(localStorage.getItem(key));
+            renderProductInCart(productId, productDetails);
+            updateTotalItems();
+            calculateTotalPrice();
+        }
+    }
+
+});
+
+function renderProductInCart(productId, productDetails) {
+    var cartContainer = document.getElementById('cart-container');
+    var productWidget = document.createElement('div');
+    productWidget.classList.add('product-widget');
+
+    var productImg = document.createElement('div');
+    productImg.classList.add('product-img');
+    var img = document.createElement('img');
+    img.setAttribute('src', productDetails.image_name);
+    img.setAttribute('alt', productDetails.image_name);
+    productImg.appendChild(img);
+
+    var productBody = document.createElement('div');
+    productBody.classList.add('product-body');
+    var productName = document.createElement('h3');
+    productName.classList.add('product-name');
+    var productNameLink = document.createElement('a');
+    productNameLink.setAttribute('href', '#');
+    productNameLink.textContent = productDetails.product_name;
+    productName.appendChild(productNameLink);
+    var productPrice = document.createElement('h4');
+    productPrice.classList.add('product-price');
+    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price; 
+
+    productBody.appendChild(productName);
+    productBody.appendChild(productPrice);
+
+    var deleteButton = document.createElement('button');
+    deleteButton.classList.add('delete');
+    deleteButton.innerHTML = '<i class="fa fa-close"></i>';
+    deleteButton.addEventListener('click', function() {
+        // Remover o item do local storage e do DOM
+        localStorage.removeItem('cartProduct_' + productId);
+        productWidget.remove();
+        
+        // Recalcular o preço total
+        calculateTotalPrice();
+    });
+
+    productWidget.appendChild(productImg);
+    productWidget.appendChild(productBody);
+    productWidget.appendChild(deleteButton);
+
+    cartContainer.appendChild(productWidget);
+}
+
+function calculateTotalPrice() {
+    var totalPrice = 0;
+    var productWidgets = document.querySelectorAll('.product-widget');
+    productWidgets.forEach(function(widget) {
+        var priceElement = widget.querySelector('.product-price');
+        var priceText = priceElement.textContent.trim().replace('$', '');
+        var price = parseFloat(priceText);
+        totalPrice += price;
+    });
+
+    var totalPriceElement = document.getElementById('total-price');
+    totalPriceElement.textContent = '$' + totalPrice.toFixed(2); // Exibir o preço total com duas casas decimais
+}
+function updateTotalItems() {
+    var totalItemsSpan = document.getElementById('total-itens');
+    var totalItems = localStorage.length;
+    totalItemsSpan.textContent = totalItems;
+}

@@ -167,7 +167,7 @@
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                            <button class="add-to-cart-btn"  data-product="{{ $product->id }}"><i class="fa fa-shopping-cart"></i> add to cart</button>
                                         </div>
                                     </div>
                                     @endif
@@ -375,34 +375,5 @@
         </div>
     </div>
 </div>
-<script>
-    var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
-
-    addToCartButtons.forEach(function(button) {
-        button.addEventListener('click', function(event) {
-            var productId = button.getAttribute('data-product');
-            
-            // Fazer uma solicitação AJAX para buscar os detalhes do produto do servidor
-            $.ajax({
-                url: '/product-details/' + productId, // Rota para buscar os detalhes do produto
-                method: 'GET',
-                success: function(response) {
-                    var productDetails = response; // Os detalhes do produto retornados pelo servidor
-                    // Armazenar os detalhes do produto no LocalStorage
-                    console.log(productDetails);
-                    localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
-                    alert('Produto adicionado ao carrinho!');
-                },
-                error: function(xhr, status, error) {
-                    console.error(error); // Lidar com erros, se houver
-                }
-            });
-
-            event.preventDefault();
-        });
-    });
-</script>
-
-</script>
 
 @endsection

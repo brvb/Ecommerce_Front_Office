@@ -24,44 +24,11 @@
                     </span>
                     <div class="dropdown-content" id="dropdown-content-container">
                         <div class="cart-list">
-
-                            <div class="product-widget">
-                                <div class="product-img">
-                                    <img src="{{ asset('assets/images/product01.png')}}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price"><span class="qty">1x</span>$980.00</h4>
-                                </div>
-                                <button class="delete"><i class="fa fa-close"></i></button>
-                            </div>
-                          
-                            <div class="product-widget">
-                                <div class="product-img">
-                                    <img src="{{ asset('assets/images/product02.png')}}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price"><span class="qty">3x</span>$980.00</h4>
-                                </div>
-                                <button class="delete"><i class="fa fa-close"></i></button>
-                            </div>
-
-                            <div class="product-widget">
-                                <div class="product-img">
-                                    <img src="{{ asset('assets/images/product01.png')}}" alt="">
-                                </div>
-                                <div class="product-body">
-                                    <h3 class="product-name"><a href="#">product name goes here</a></h3>
-                                    <h4 class="product-price"><span class="qty">2x</span>$980.00</h4>
-                                </div>
-                                <button class="delete"><i class="fa fa-close"></i></button>
-                            </div>
-
+                            <div id="cart-container"></div>
                         </div>
                         <div class="cart-summary">
-                            <small>3 Item(s) selected</small>
-                            <h5>SUBTOTAL: $2940.00</h5>
+                            <small><span id="total-itens"></span> Item(s) selected</small>
+                            <h5>SUBTOTAL:<span id="total-price"></span></h5>
                         </div>
                         <div class="cart-btns">
                             <a class="view-cart" href="{{ route('cart') }}">View Cart</a>
