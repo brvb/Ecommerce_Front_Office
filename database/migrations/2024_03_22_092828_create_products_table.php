@@ -18,7 +18,7 @@ class CreateProductsTable extends Migration
             $table->string('image_name');
             $table->string('product_name');
             $table->text('Description');
-            $table->int('stock');
+            $table->integer('stock');
             $table->unsignedBigInteger('idcategory');
             $table->decimal('price', 8, 2);
             $table->decimal('old_price', 8, 2)->nullable();
