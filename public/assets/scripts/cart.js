@@ -51,9 +51,9 @@ addToCartButtons.forEach(function(button) {
         event.preventDefault();
     });
 });
-// JavaScript
+
 document.addEventListener('DOMContentLoaded', function() {
-    // Recuperar todos os itens do carrinho do local storage
+
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
         if (key.startsWith('cartProduct_')) {
@@ -98,11 +98,9 @@ function renderProductInCart(productId, productDetails) {
     deleteButton.classList.add('delete');
     deleteButton.innerHTML = '<i class="fa fa-close"></i>';
     deleteButton.addEventListener('click', function() {
-        // Remover o item do local storage e do DOM
         localStorage.removeItem('cartProduct_' + productId);
         productWidget.remove();
-        
-        // Recalcular o preço total
+        updateTotalItems()
         calculateTotalPrice();
     });
 
@@ -111,6 +109,7 @@ function renderProductInCart(productId, productDetails) {
     productWidget.appendChild(deleteButton);
 
     cartContainer.appendChild(productWidget);
+    updateTotalItems()
 }
 
 function calculateTotalPrice() {
@@ -124,8 +123,12 @@ function calculateTotalPrice() {
     });
 
     var totalPriceElement = document.getElementById('total-price');
-    totalPriceElement.textContent = '$' + totalPrice.toFixed(2); // Exibir o preço total com duas casas decimais
+    totalPriceElement.textContent = '$' + totalPrice.toFixed(2);
 }
+document.getElementById('clear-localstorage-btn').addEventListener('click', function() {
+    localStorage.clear();
+    console.log('LocalStorage foi limpo.');
+});
 function updateTotalItems() {
     var totalItemsSpan = document.getElementById('total-itens');
     var totalItems = localStorage.length;
