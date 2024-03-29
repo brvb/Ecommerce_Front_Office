@@ -136,20 +136,20 @@
 
                                                 foreach($reviews as $review) {
                                                     if($review->product_id == $product->id) {
-                                                        
+
                                                         $averageRating += $review->product_rating;
                                                         $totalReviews++;
                                                     }
                                                 }
-  
+
                                                 if($totalReviews > 0) {
                                                     $averageRating = $averageRating / $totalReviews;
-                                                } 
+                                                }
                                                 $averageRating = intval($averageRating);
                                             @endphp
-                                            
+
                                             @if($totalReviews == 0)
-                                               
+
                                             @else
                                                 @for($i = 1; $i <= 5; $i++)
                                                     @if($i <= $averageRating )
@@ -171,7 +171,7 @@
                                         </div>
                                     </div>
                                     @endif
-                                   
+
                             @endforeach
                                     <!-- /product -->
                                 </div>
@@ -267,7 +267,7 @@
                                 <div class="products-slick" data-nav="#slick-nav-2">
                                     <!-- product -->
                                     @foreach($products as $product)
-                                   
+
                                     <div class="product">
                                     <a href="{{route('product',$product->id)}}"></a>
                                         <div class="product-img">
@@ -306,7 +306,7 @@
                                                 </del>
                                             </h4>
                                             <div class="product-rating">
-                                            
+
                                             @php
 
                                                 $averageRating = 0;
@@ -314,20 +314,20 @@
 
                                                 foreach($reviews as $review) {
                                                     if($review->product_id == $product->id) {
-                                                        
+
                                                         $averageRating += $review->product_rating;
                                                         $totalReviews++;
                                                     }
                                                 }
-  
+
                                                 if($totalReviews > 0) {
                                                     $averageRating = $averageRating / $totalReviews;
-                                                } 
+                                                }
                                                 $averageRating = intval($averageRating);
                                             @endphp
-                                            
+
                                             @if($totalReviews == 0)
-                                               
+
                                             @else
                                                 @for($i = 1; $i <= 5; $i++)
                                                     @if($i <= $averageRating )
