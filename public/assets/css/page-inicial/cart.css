@@ -1,0 +1,18 @@
+.container-view-cart{
+    padding: 50px 0;
+}
+.container-view-cart h1{
+    margin: 0;
+    padding: 0;
+}
+#observacao_cart{
+    width: 100%;
+    height: 100px;
+    border-radius: 5px;
+}
+.container-values-cart{
+    padding: 0 0 0 40px;
+}
+.container-view-info{
+    padding: 0 20px;
+}

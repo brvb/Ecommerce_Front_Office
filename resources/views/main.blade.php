@@ -22,12 +22,14 @@
         <link rel="stylesheet" href="{{ asset('./assets/css/page-inicial/slick.css') }}" />
         <link rel="stylesheet" href="{{ asset('./assets/css/page-inicial/newsletter.css') }}" />
         <link rel="stylesheet" href="{{ asset('./assets/css/page-inicial/footer.css') }}" />
+        <link rel="stylesheet" href="{{ asset('./assets/css/page-inicial/cart.css') }}" />
+
+
     </head>
     <body>
         <div class="header">
             @include('layouts.navbar')
         </div>
-
         <div class="container">
             @yield('pagina-main')
         </div>
