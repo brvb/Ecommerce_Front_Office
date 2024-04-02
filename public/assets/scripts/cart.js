@@ -41,6 +41,8 @@ addToCartButtons.forEach(function(button) {
 
                 localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
                 renderProductInCart(productId, productDetails);
+                updateTotalItems();
+                calculateTotalPrice();
                 alert('Produto adicionado ao carrinho!');
             },
             error: function(xhr, status, error) {
@@ -49,11 +51,11 @@ addToCartButtons.forEach(function(button) {
         });
 
         event.preventDefault();
+
     });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
         if (key.startsWith('cartProduct_')) {
@@ -132,4 +134,15 @@ function updateTotalItems() {
     var totalItemsSpan = document.getElementById('total-itens');
     var totalItems = localStorage.length;
     totalItemsSpan.textContent = totalItems;
+
+    var pElement = document.getElementById('container-total-itens');
+    if (totalItems == 0) {
+        pElement.classList.add('d-none');
+        pElement.classList.remove('d-flex');
+    } else {
+        pElement.classList.remove('d-none');
+        pElement.classList.add('d-flex');
+    }
+    console.log(localStorage);
+
 }

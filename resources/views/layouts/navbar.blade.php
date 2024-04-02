@@ -15,12 +15,12 @@
             <div class="col-12 col-lg-2  d-flex container-icons" style="justify-content: flex-end;">
                 <div class="icon">
                     <i class="fa-regular fa-heart"></i>
-                    <p class="number">3</p>
+                    <p class="number"><span>2</span></p>
                 </div>
                 <div class="dropdown icon">
                     <span id="dropdown-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <p class="number">2</p>
+                        <p class="number d-none" id="container-total-itens"><span id="total-itens"></span></p>
                     </span>
                     <div class="dropdown-content" id="dropdown-content-container">
                         <div class="cart-list">
