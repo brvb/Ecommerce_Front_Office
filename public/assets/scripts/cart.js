@@ -32,15 +32,17 @@ var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {
         var productId = button.getAttribute('data-product');
-        
+
         $.ajax({
             url: '/product-details/' + productId,
             method: 'GET',
             success: function(response) {
                 var productDetails = response;
-                
+
                 localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
                 renderProductInCart(productId, productDetails);
+                updateTotalItems();
+                calculateTotalPrice();
                 alert('Produto adicionado ao carrinho!');
             },
             error: function(xhr, status, error) {
@@ -49,11 +51,11 @@ addToCartButtons.forEach(function(button) {
         });
 
         event.preventDefault();
+
     });
 });
 
 document.addEventListener('DOMContentLoaded', function() {
-
     for (var i = 0; i < localStorage.length; i++) {
         var key = localStorage.key(i);
         if (key.startsWith('cartProduct_')) {
@@ -89,7 +91,7 @@ function renderProductInCart(productId, productDetails) {
     productName.appendChild(productNameLink);
     var productPrice = document.createElement('h4');
     productPrice.classList.add('product-price');
-    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price; 
+    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price;
 
     productBody.appendChild(productName);
     productBody.appendChild(productPrice);
@@ -133,4 +135,14 @@ function updateTotalItems() {
     var totalItemsSpan = document.getElementById('total-itens');
     var totalItems = localStorage.length;
     totalItemsSpan.textContent = totalItems;
+
+    var pElement = document.getElementById('container-total-itens');
+    if (totalItems == 0) {
+        pElement.classList.add('d-none');
+        pElement.classList.remove('d-flex');
+    } else {
+        pElement.classList.remove('d-none');
+        pElement.classList.add('d-flex');
+    }
+    console.log(localStorage);
 }
