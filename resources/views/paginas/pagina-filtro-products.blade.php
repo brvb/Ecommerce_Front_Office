@@ -32,46 +32,43 @@
 
     /*-- Price Filter --*/
 
+    .noUi-origin {
+        position: absolute;
+        height: 0;
+        width: 0;
+    }
+
+    .noUi-base {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
     #price-slider {
         margin-bottom: 15px;
     }
 
     .noUi-target {
-        background-color: #FFF;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border: 1px solid #E4E7ED;
-        border-radius: 0px;
-    }
+    background-color: #FAFAFA;
+    border-radius: 4px;
+    border: 1px solid #D3D3D3;
+    box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+    position: relative;
+    direction: ltr;
+}
 
-    .noUi-connect {
-        background-color: var(--ColorPrimaria);
-    }
+.noUi-connect {
+    background-color: var(--ColorPrimaria);
+}
 
-    .noUi-horizontal {
-        height: 6px;
-    }
-
-    .noUi-horizontal .noUi-handle {
-        width: 12px;
-        height: 12px;
-        left: -6px;
-        top: -4px;
-        border: none;
-        background: var(--ColorPrimaria);
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        border-radius: 50%;
-    }
+.noUi-horizontal {
+    height: 6px;
+}
 
     .noUi-handle:before,
     .noUi-handle:after {
         display: none;
-    }
-
-    .price-filter .input-number {
-        display: inline-block;
-        width: calc(50% - 7px);
     }
 
     /*----------------------------*\
@@ -128,6 +125,7 @@
         border-color: var(--ColorPrimaria);
         color: #FFF;
         cursor: default;
+
     }
 
     .store-grid li a {
@@ -181,57 +179,61 @@
     }
 
     .input-checkbox {
-    display: flex;
-    align-items: center;
-}
+        display: flex;
+        align-items: center;
+    }
 
-.checkbox-check {
-    display: none;
-}
+    .checkbox-check {
+        display: none;
+    }
 
-.checkbox-label {
-    position: relative;
-    padding-left: 30px; /* Espaço para a marca de seleção */
-    cursor: pointer;
-    font-size: 12px;
-    line-height: 20px;
-}
+    .checkbox-label {
+        position: relative;
+        padding-left: 30px;
+        /* Espaço para a marca de seleção */
+        cursor: pointer;
+        font-size: 12px;
+        line-height: 20px;
+    }
 
-.checkmark {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 16px;
-    width: 16px;
-    background-color: #cccccc67;
-    border-radius: 3px;
-    border: #bac3d3 solid 1px;
-}
+    .checkmark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 16px;
+        width: 16px;
+        background-color: #eeeeee67;
+        border-radius: 3px;
+        border: #bac3d3 solid 1px;
+    }
 
-/* Adicionando estilo quando o checkbox está marcado */
-.checkbox-check:checked + .checkbox-label .checkmark {
-    background-color: var(--ColorPrimaria); /* Altere para a cor desejada */
-    border: #bac3d3 solid 1px;
-}
+    /* Adicionando estilo quando o checkbox está marcado */
+    .checkbox-check:checked+.checkbox-label .checkmark {
+        background-color: var(--ColorPrimaria);
+        /* Altere para a cor desejada */
+        border: #bac3d3 solid 1px;
+    }
 
-.checkbox-check:checked + .checkbox-label .checkmark:after {
-    content: "";
-    position: absolute;
-    display: block;
-    left: 5px;
-    top: 1px;
-    width: 5px;
-    height: 10px;
-    border: solid white;
-    border-width: 0 2px 2px 0;
-    transform: rotate(45deg);
-}
+    .checkbox-check:checked+.checkbox-label .checkmark:after {
+        content: "";
+        position: absolute;
+        display: block;
+        left: 5px;
+        top: 1px;
+        width: 5px;
+        height: 10px;
+        border: solid white;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+    }
 
-.checkbox-label:hover .checkmark {
-    background-color: #e0e0e0;
-}
+    .checkbox-label:hover .checkmark {
+        background-color: #e0e0e0;
+    }
 
-
+    .fa.fa-pinterest, .fa.fa-instagram, .fa.fa-twitter, .fa.fa-facebook{
+        margin-top: 12px;
+    }
 </style>
 @section('pagina-filtro-products')
     <!-- SECTION -->
@@ -259,16 +261,16 @@
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-2" class="checkbox-check">
                                 <label for="category-2" class="checkbox-label">
-                                <span class="checkmark"></span>
-                                Smartphones
-                                <small>(740)</small>
+                                    <span class="checkmark"></span>
+                                    Smartphones
+                                    <small>(740)</small>
                                 </label>
                             </div>
 
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-3" class="checkbox-check">
                                 <label for="category-3" class="checkbox-label">
-                                <span class="checkmark"></span>
+                                    <span class="checkmark"></span>
                                     Cameras
                                     <small>(1450)</small>
                                 </label>
@@ -277,7 +279,7 @@
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-4" class="checkbox-check">
                                 <label for="category-4" class="checkbox-label">
-                                <span class="checkmark"></span>
+                                    <span class="checkmark"></span>
                                     Accessories
                                     <small>(578)</small>
                                 </label>
@@ -286,7 +288,7 @@
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-5" class="checkbox-check">
                                 <label for="category-5" class="checkbox-label">
-                                <span class="checkmark"></span>
+                                    <span class="checkmark"></span>
                                     Laptops
                                     <small>(120)</small>
                                 </label>
@@ -295,7 +297,7 @@
                             <div class="input-checkbox">
                                 <input type="checkbox" id="category-6" class="checkbox-check">
                                 <label for="category-6" class="checkbox-label">
-                                <span class="checkmark"></span>
+                                    <span class="checkmark"></span>
                                     Smartphones
                                     <small>(740)</small>
                                 </label>
@@ -442,8 +444,10 @@
                             </label>
                         </div>
                         <ul class="store-grid">
-                            <li class="active"><i class="fa fa-th"></i></li>
-                            <li><a href="#"><i class="fa fa-th-list"></i></a></li>
+                            <li class="active"><a href="#"><i style="margin-top: 12px; color:#FFF; font-size:16px;"
+                                        class="fa fa-th"></i></a></li>
+                            <li><a href="#"><i style="margin-top: 12px; font-size:16px; "
+                                        class="fa fa-th-list"></i></a></li>
                         </ul>
                     </div>
                     <!-- /store top filter -->
@@ -771,4 +775,3 @@
     </div>
     <!-- /SECTION -->
 @endsection
-

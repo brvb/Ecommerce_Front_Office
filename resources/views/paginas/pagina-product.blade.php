@@ -109,7 +109,7 @@
 
                                     foreach($reviews as $review) {
                                         if($review->product_id == $product->id) {
-                                            
+
                                             $averageRating += $review->product_rating;
                                             $totalReviews++;
                                             if($review->product_rating == 1){
@@ -134,12 +134,12 @@
 
                                     if($totalReviews > 0) {
                                         $averageRating = $averageRating / $totalReviews;
-                                    } 
+                                    }
                                     $averageRatinge = intval($averageRating);
                                 @endphp
-                                
+
                                 @if($totalReviews == 0)
-                                    
+
                                 @else
                                     @for($i = 1; $i <= 5; $i++)
                                         @if($i <= $averageRatinge )
@@ -268,7 +268,7 @@
                                                             <i class="fa fa-star-o"></i>
                                                         @endif
                                                     @endfor
-												
+
 													</div>
 												</div>
 												<ul class="rating">
@@ -346,9 +346,9 @@
 										<div class="col-md-6">
 											<div id="reviews">
 												<ul class="reviews">
-                                                
-                                                @foreach($reviews as $review) 
-                                                    @if($review->product_id == $product->id) 
+
+                                                @foreach($reviews as $review)
+                                                    @if($review->product_id == $product->id)
                                                         <li>
                                                             <div class="review-heading">
                                                                 <h5 class="name">{{$review->user_name}}</h5>
@@ -367,13 +367,13 @@
                                                                 <p>{{$review->comentario}}</p>
                                                             </div>
                                                         </li>
-                                                    
-                                                        
+
+
                                                     @endif
-                                                    
+
                                                 @endforeach
 												</ul>
-												
+
 											</div>
 										</div>
 										<!-- /Reviews -->
@@ -429,9 +429,9 @@
 					</div>
 
 					<!-- product -->
-					
+
                     @foreach($products as $product)
-                      <div class="col-md-3 col-xs-6">             
+                      <div class="col-md-3 col-xs-6">
                             <div class="product">
                             <a href="{{route('product',$product->id)}}"></a>
                                 <div class="product-img">
@@ -477,7 +477,7 @@
 
                                     foreach($reviews as $review) {
                                         if($review->product_id == $product->id) {
-                                            
+
                                             $averageRating += $review->product_rating;
                                             $totalReviews++;
                                         }
@@ -485,7 +485,7 @@
 
                                     if($totalReviews > 0) {
                                         $averageRating = $averageRating / $totalReviews;
-                                    } 
+                                    }
                                     $averageRating = intval($averageRating);
                                     @endphp
 

@@ -27,6 +27,8 @@ Route::get('/checkout', [MasterController::class, 'checkoutPage'])->name('checko
 
 Route::get('/filtro-products', [MasterController::class, 'filtroProductsPage'])->name('filtro-products');
 
+Route::get('/contacto', [MasterController::class, 'contactoPage'])->name('contacto');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified',
 ])->group(function () {

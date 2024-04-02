@@ -32,13 +32,13 @@ var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {
         var productId = button.getAttribute('data-product');
-        
+
         $.ajax({
             url: '/product-details/' + productId,
             method: 'GET',
             success: function(response) {
                 var productDetails = response;
-                
+
                 localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
                 renderProductInCart(productId, productDetails);
                 alert('Produto adicionado ao carrinho!');
@@ -89,7 +89,7 @@ function renderProductInCart(productId, productDetails) {
     productName.appendChild(productNameLink);
     var productPrice = document.createElement('h4');
     productPrice.classList.add('product-price');
-    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price; 
+    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price;
 
     productBody.appendChild(productName);
     productBody.appendChild(productPrice);
@@ -125,8 +125,7 @@ function calculateTotalPrice() {
     var totalPriceElement = document.getElementById('total-price');
     totalPriceElement.textContent = '$' + totalPrice.toFixed(2);
 }
-document.getElementById('clear-localstorage-btn').addEventListener('click', function() {
-    localStorage.clear();
+document.getElementById('clear-localstorage-btn').addEventListener('click', function() {localStorage.clear();
     console.log('LocalStorage foi limpo.');
 });
 function updateTotalItems() {
