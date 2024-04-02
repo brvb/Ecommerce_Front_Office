@@ -113,7 +113,7 @@
                     </ul>
                     <span class="copyright">
                         <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a href="https://www.brvr.pt/" target="_blank">BRVR</a>
+                        Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved |<a style="color: rgba(255, 255, 255, 0.815);" href="https://www.brvr.pt/" target="_blank">BRVR</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     </span>
                 </div>

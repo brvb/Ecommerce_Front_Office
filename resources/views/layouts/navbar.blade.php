@@ -66,7 +66,7 @@
                     <li><a href="#">Oferta do dia</a></li>
                     <li><a href="#">Histórico</a></li>
                     <li class="{{ Str::contains(request()->route()->getName(), 'filtro-products') ? 'active' : '' }}"><a href="{{ route('filtro-products') }}">Produtos</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="{{ route('contacto') }}">Contacto</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>

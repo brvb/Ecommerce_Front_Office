@@ -43,6 +43,9 @@
         <div class="container">
             @yield('pagina-filtro-products')
         </div>
+        <div class="container">
+            @yield('pagina-contacto')
+        </div>
 
 		<!-- FOOTER -->
 		@include('layouts.footer')
