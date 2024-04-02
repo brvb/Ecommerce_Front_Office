@@ -127,8 +127,7 @@ function calculateTotalPrice() {
     var totalPriceElement = document.getElementById('total-price');
     totalPriceElement.textContent = '$' + totalPrice.toFixed(2);
 }
-document.getElementById('clear-localstorage-btn').addEventListener('click', function() {
-    localStorage.clear();
+document.getElementById('clear-localstorage-btn').addEventListener('click', function() {localStorage.clear();
     console.log('LocalStorage foi limpo.');
 });
 function updateTotalItems() {
@@ -145,4 +144,5 @@ function updateTotalItems() {
         pElement.classList.add('d-flex');
     }
     console.log(localStorage);
+
 }
