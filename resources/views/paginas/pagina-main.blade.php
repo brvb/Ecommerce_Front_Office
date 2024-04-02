@@ -82,17 +82,14 @@
                 <div class="col-md-12">
                     <div class="row">
                         <div class="products-tabs">
-                            <!-- tab -->
-                            <div id="tab1" class="tab-pane active">
+ <!-- tab -->
+                            <div id="tab1" class="tab-pane fade in active">
                                 <div class="products-slick" data-nav="#slick-nav-1">
+                                    <!-- product -->
                                     @foreach($products as $product)
-                                    @php
-                                        $lastUpdated = \Carbon\Carbon::parse($product->updated_at);
-                                        $difference = $lastUpdated->diffInDays(\Carbon\Carbon::now());
-                                        $isNewProduct = $difference < 7;
-                                    @endphp
-                                    @if($isNewProduct)
+
                                     <div class="product">
+                                    <a href="{{route('product',$product->id)}}"></a>
                                         <div class="product-img">
                                             <img src="{{ asset('./assets/images/product01.png') }}" alt="">
                                             <div class="product-label">
@@ -129,6 +126,7 @@
                                                 </del>
                                             </h4>
                                             <div class="product-rating">
+
                                             @php
 
                                                 $averageRating = 0;
@@ -167,14 +165,15 @@
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button class="add-to-cart-btn"  data-product="{{ $product->id }}"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                        <button class="add-to-cart-btn" data-product="{{ $product->id }}">
+                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                        </button>
+
                                         </div>
                                     </div>
-                                    @endif
-
-                            @endforeach
-                                    <!-- /product -->
-                                </div>
+                                    @endforeach
+                                        <!-- /product -->
+                                    </div>
                                 <div id="slick-nav-1" class="products-slick-nav"></div>
                             </div>
                             <!-- /tab -->
