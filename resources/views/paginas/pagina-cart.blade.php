@@ -61,8 +61,8 @@
             <hr>
             <div class="d-flex justify-content-between">
                 <a href="#">Voltar à loja</a>
-                <span>
-                    <button type="submit" class="btn btn-success">Checkout</button>
+                <span class="btn_checkout">
+                    <button type="submit" class="btn">Checkout</button>
                     <p>Li e aceito os <a href="#">Termos e condições</a></p>
                 </span>
             </div>
