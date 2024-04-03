@@ -144,5 +144,18 @@ function updateTotalItems() {
         pElement.classList.add('d-flex');
     }
     console.log(localStorage);
+}
 
+function increment(id) {
+    var counter = document.getElementById('counter'+ id);
+    var value = parseInt(counter.value);
+    counter.value = value + 1;
+}
+
+function decrement(id) {
+    var counter = document.getElementById('counter'+ id);
+    var value = parseInt(counter.value);
+    if (value > 1) {
+        counter.value = value - 1;
+    }
 }
