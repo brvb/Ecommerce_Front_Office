@@ -47,7 +47,7 @@
     </div>
 
 </div>
-<div class="navigation container-fluid" id="sidebar">
+<div class="navigation container-fluid" id="sidebar" style="z-index: 999;">
         <!-- container -->
         <div class="container" style="padding-left: 0;">
             <!-- responsive-nav -->
@@ -55,18 +55,18 @@
                 <!-- NAV -->
                 <ul class="main-nav navbar-nav">
                     <li class="{{ Str::contains(request()->route()->getName(), '/') ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
-                    <li class="paste-button">
+                    <li class="paste-button" style="z-index: 998;">
                         <button class="button"><a>Categories</a></button>
-                        <div class="dropdown-contente ">
+                        <div class="dropdown-contente">
                             @foreach($categories as $category)
                                 <a href="#">{{ $category->title }}</a>
                             @endforeach
                         </div>
                     </li>
-                    <li><a href="#">Oferta do dia</a></li>
+                    <li class="{{ Str::contains(request()->route()->getName(), 'oferta') ? 'active' : '' }}"><a href="{{ route('oferta') }}">Oferta do dia</a></li>
                     <li><a href="#">Histórico</a></li>
                     <li class="{{ Str::contains(request()->route()->getName(), 'filtro-products') ? 'active' : '' }}"><a href="{{ route('filtro-products') }}">Produtos</a></li>
-                    <li><a href="{{ route('contacto') }}">Contacto</a></li>
+                    <li class="{{ Str::contains(request()->route()->getName(), 'contacto') ? 'active' : '' }}"><a href="{{ route('contacto') }}">Contacto</a></li>
                 </ul>
                 <!-- /NAV -->
             </div>

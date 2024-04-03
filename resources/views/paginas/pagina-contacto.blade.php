@@ -1,8 +1,9 @@
 @extends('main')
 <style>
-    div#newsletter.section{
+    div#newsletter.section {
         margin-top: 1px;
     }
+
     .background-contacto::before {
         content: '';
         height: 100%;
@@ -28,25 +29,27 @@
         min-width: 1100px;
         min-height: 580px;
         display: flex;
-        z-index: 1000;
+        z-index: 800;
     }
 
     .container-contacto .contactoInfo ul.info li span:nth-child(2) {
-    color: #fff;
-    margin-left: 10px;
-    font-weight: 300;
-}
-.container-contacto .contactoInfo ul.info li span a {
-    color: #fff;
-    text-decoration: none;
-    width: 30px;
-    min-width: 30px;
-}
-.container-contacto .contactoInfo ul.info li span:nth-child(2) {
-    color: #fff;
-    margin-left: 10px;
-    font-weight: 300;
-}
+        color: #fff;
+        margin-left: 10px;
+        font-weight: 300;
+    }
+
+    .container-contacto .contactoInfo ul.info li span a {
+        color: #fff;
+        text-decoration: none;
+        width: 30px;
+        min-width: 30px;
+    }
+
+    .container-contacto .contactoInfo ul.info li span:nth-child(2) {
+        color: #fff;
+        margin-left: 10px;
+        font-weight: 300;
+    }
 
     .container-contacto .contactoInfo {
         position: absolute;
@@ -65,217 +68,216 @@
     }
 
     .container-contacto .contactoForm {
-    position: absolute;
-    top: 60px;
-    padding: 60px 50px;
-    padding-left: 300px;
-    margin-left: 100px;
-    width: calc(100% - 200px);
-    height: 100%;
-    background: #ffffff;
-    box-shadow: 5px 15px 35px rgba(0,0,0,0.25);
-    border-radius: 22px;
-}
-
-.container-contacto .contactoForm .formBox {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    padding-top: 30px;
-}
-.container-contacto .contactoForm .formBox .inputBox {
-    position: relative;
-    margin-bottom: 35px;
-}
-.container-contacto .contactoForm .formBox .inputBox.w50 {
-    width: 47%;
-}
-.container-contacto .contactoForm .formBox .inputBox.w100 {
-    width: 100%;
-}
-
-.container-contacto .contactoForm .formBox .inputBox span {
-    position: absolute;
-    left: 0;
-    padding: 5px 0;
-    pointer-events: none;
-    font-size: 18px;
-    font-weight: 300;
-    transition: 0.3s;
-}
-.container-contacto .contactoForm .formBox .inputBox input, .container-contacto .contactoForm .formBox .inputBox textarea {
-    width: 100%;
-    resize: none;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: 300;
-    color: #333;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #777;
-}
-
-.container-contacto .contactoForm .formBox .inputBox select {
-    width: 100%;
-    padding: 5px 0;
-    font-size: 18px;
-    font-weight: 300;
-    color: #333;
-    border: none;
-    outline: none;
-    border-bottom: 1px solid #777;
-    appearance: none; /* Remove default dropdown arrow */
-    -webkit-appearance: none; /* Remove default dropdown arrow for Safari */
-    -moz-appearance: none; /* Remove default dropdown arrow for Firefox */
-    background-image: url('data:image/svg+xml;utf8,<svg fill="%23333" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"/><path fill="none" d="M0 0h24v24H0z"/></svg>'); /* Add custom dropdown arrow */
-    background-repeat: no-repeat;
-    background-position: right 10px top 50%;
-}
-.container-contacto .contactoForm .formBox .inputBox textarea {
-    height: 120px;
-}
-
-.container-contacto .contactoForm .formBox .inputBox input:focus ~ span,
-.container-contacto .contactoForm .formBox .inputBox input:valid ~ span,
-.container-contacto .contactoForm .formBox .inputBox textarea:focus ~ span,
-.container-contacto .contactoForm .formBox .inputBox textarea:valid ~ span {
-    transform: translateY(-20px);
-    font-size:  12px;
-    font-weight: 400;
-    letter-spacing: 1px;
-    color: var(--ColorPrimaria);
-    font-weight: 500;
-}
-
-.container-contacto .contactoForm .formBox .inputBox input[type="submit"] {
-    position: relative;
-    cursor: pointer;
-    background: var(--ColorPrimaria);
-    border-radius: 20px;
-    color: #fff;
-    border: none;
-    max-width: 150px;
-    padding: 12px;
-    transition: 0.3s ease;
-}
-.container-contacto .contactoForm .formBox .inputBox input[type="submit"]:hover{
-    background: #00111b;
-}
-
-/* make the form responsive */
-@media (max-width: 1200px)
-{
-    div.container{
-        margin:10px;
-    }
-    .container-contacto
-    {
-        width: 90%;
-        min-width: auto;
-        margin: 20px;
-        box-shadow: 0 20px 50px rgba(0,0,0,0.2);
+        position: absolute;
+        top: 60px;
+        padding: 60px 50px;
+        padding-left: 300px;
+        margin-left: 100px;
+        width: calc(100% - 200px);
+        height: 100%;
+        background: #ffffff;
+        box-shadow: 5px 15px 35px rgba(0, 0, 0, 0.25);
+        border-radius: 22px;
     }
 
-    .container-contacto .contactoInfo
-    {
-        top: 0;
-        height: 550px;
+    .container-contacto .contactoForm .formBox {
         position: relative;
-        box-shadow: none;
-        border-radius: 0px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding-top: 30px;
     }
 
-    .container-contacto .contactoForm
-    {
+    .container-contacto .contactoForm .formBox .inputBox {
         position: relative;
-        width: calc(100% - 300px);
-        padding-left: 0;
-        margin-left: 0;
-        padding: 30px;
-        height: 550px;
-        box-shadow: none;
-        border-radius: 0px;
-        top: 0px;
-
-    }
-}
-
-@media (max-width: 991px)
-{
-    .background-contacto
-    {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 100vh;
-        background: #00111b13;
+        margin-bottom: 35px;
     }
 
-    .background-contacto::before
-    {
-        display: none;
+    .container-contacto .contactoForm .formBox .inputBox.w50 {
+        width: 47%;
     }
 
-    .container-contacto
-    {
-        display: flex;
-        flex-direction: column-reverse;
-    }
-
-    .container-contacto .contactoForm
-    {
-        width: 100%;
-        height: auto;
-        border-radius: 0px;
-    }
-
-    .container-contacto .contactoInfo
-    {
-        width: 100%;
-        height: auto;
-        flex-direction: row;
-        border-radius: 0px;
-    }
-    .container-contacto .contactoInfo ul.sci
-    {
-       position: relative;
-       display: flex;
-       justify-content: center;
-       align-items: center;
-    }
-}
-
-@media (max-width: 600px)
-{
-    .container-contacto .contactoForm
-    {
-        padding: 25px;
-    }
-
-    .container-contacto .contactoInfo{
-        padding: 25px;
-        flex-direction: column;
-        align-items: flex-start;
-    }
-
-    .container-contacto .contactoInfo ul.sci
-    {
-        margin-top: 40px;
-    }
-
-    .container-contacto .contactoForm .formBox .inputBox.w50
-    {
+    .container-contacto .contactoForm .formBox .inputBox.w100 {
         width: 100%;
     }
-    div#newsletter.section {
-    margin-top: 80px;
-}
-div.container {
-    margin: 5px 0px;
-    padding: 0 10px;
-}
-}
+
+    .container-contacto .contactoForm .formBox .inputBox span {
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        pointer-events: none;
+        font-size: 18px;
+        font-weight: 300;
+        transition: 0.3s;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox input,
+    .container-contacto .contactoForm .formBox .inputBox textarea {
+        width: 100%;
+        resize: none;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #777;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox select {
+        width: 100%;
+        padding: 5px 0;
+        font-size: 18px;
+        font-weight: 300;
+        color: #333;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid #777;
+        appearance: none;
+        /* Remove default dropdown arrow */
+        -webkit-appearance: none;
+        /* Remove default dropdown arrow for Safari */
+        -moz-appearance: none;
+        /* Remove default dropdown arrow for Firefox */
+        background-repeat: no-repeat;
+        background-position: right 10px top 50%;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox textarea {
+        height: 120px;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox input:focus~span,
+    .container-contacto .contactoForm .formBox .inputBox input:valid~span,
+    .container-contacto .contactoForm .formBox .inputBox textarea:focus~span,
+    .container-contacto .contactoForm .formBox .inputBox textarea:valid~span {
+        transform: translateY(-20px);
+        font-size: 12px;
+        font-weight: 400;
+        letter-spacing: 1px;
+        color: var(--ColorPrimaria);
+        font-weight: 500;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox input[type="submit"] {
+        position: relative;
+        cursor: pointer;
+        background: var(--ColorPrimaria);
+        border-radius: 20px;
+        color: #fff;
+        border: none;
+        max-width: 150px;
+        padding: 12px;
+        transition: 0.3s ease;
+    }
+
+    .container-contacto .contactoForm .formBox .inputBox input[type="submit"]:hover {
+        background: #00111b;
+    }
+
+    /* make the form responsive */
+    @media (max-width: 1200px) {
+        div.container {
+            margin: 10px;
+        }
+
+        .container-contacto {
+            width: 90%;
+            min-width: auto;
+            margin: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+
+        .container-contacto .contactoInfo {
+            top: 0;
+            height: 550px;
+            position: relative;
+            box-shadow: none;
+            border-radius: 0px;
+        }
+
+        .container-contacto .contactoForm {
+            position: relative;
+            width: calc(100% - 300px);
+            padding-left: 0;
+            margin-left: 0;
+            padding: 30px;
+            height: 550px;
+            box-shadow: none;
+            border-radius: 0px;
+            top: 0px;
+
+        }
+    }
+
+    @media (max-width: 994px) {
+        .background-contacto {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #00111b13;
+        }
+
+        .background-contacto::before {
+            display: none;
+        }
+
+        .container-contacto {
+            display: flex;
+            flex-direction: column-reverse;
+        }
+
+        .container-contacto .contactoForm {
+            width: 100%;
+            height: auto;
+            border-radius: 0px;
+        }
+
+        .container-contacto .contactoInfo {
+            width: 100%;
+            height: auto;
+            flex-direction: row;
+            border-radius: 0px;
+        }
+
+        .container-contacto .contactoInfo ul.sci {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .background-contacto {
+            background: #00111b00;
+            margin-bottom: 10rem;
+        }
+
+        .container-contacto .contactoForm {
+            padding: 25px;
+        }
+
+        .container-contacto .contactoInfo {
+            padding: 25px;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .container-contacto .contactoInfo ul.sci {
+            margin-top: 40px;
+        }
+
+        .container-contacto .contactoForm .formBox .inputBox.w50 {
+            width: 100%;
+        }
+
+        div.container {
+            margin: 5px 0px;
+            padding: 0 10px;
+        }
+    }
 </style>
 @section('pagina-contacto')
     <!-- SECTION -->
@@ -285,21 +287,24 @@ div.container {
             <div class="contactoInfo">
                 <div>
                     <h3 style="font-size:24px; font-weight:500; color:#fff;">Contacto</h3>
+                    <br>
                     <ul class="info">
                         <li>
-                            <span><img src="/images/location.png"></span>
+                            <span><i class="fas fa-map-marker-alt" style="color: #ffffff;"></i></span>
                             <span>184 Ippokratous Street<br>
                                 Athens, Gr<br>
                                 11472</span>
 
                         </li>
+                        <br>
                         <li>
-                            <span><img src="/images/mail.png"></span>
+                            <span><i class="fas fa-envelope" style="color: #ffffff;"></i></span>
                             <!-- <span>nassosanagn@gmail.com</span> -->
                             <span><a href="mailto: nassosanagn@gmail.com">nassosanagn@gmail.com</a></span>
                         </li>
+                        <br>
                         <li>
-                            <span><img src="/images/call.png"></span>
+                            <span><i class="fas fa-phone-square" style="color: #ffffff;"></i></span>
                             <span>702-279-3488</span>
                         </li>
 

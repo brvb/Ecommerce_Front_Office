@@ -375,7 +375,8 @@ ul, ol {
   min-width: 200px;
   margin-top: 20px;
   background-color: #FFF;
-  border-top: 2px solid var(--ColorPrimaria);
+  border-top: 1px solid var(--ColorPrimaria);
+  box-shadow: 0px 0px 1px #0073d1;
 }
 .dropdown-contente a {
   padding: 10px;

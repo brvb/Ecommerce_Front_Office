@@ -50,21 +50,21 @@
     }
 
     .noUi-target {
-    background-color: #FAFAFA;
-    border-radius: 4px;
-    border: 1px solid #D3D3D3;
-    box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
-    position: relative;
-    direction: ltr;
-}
+        background-color: #FAFAFA;
+        border-radius: 4px;
+        border: 1px solid #D3D3D3;
+        box-shadow: inset 0 1px 1px #F0F0F0, 0 3px 6px -5px #BBB;
+        position: relative;
+        direction: ltr;
+    }
 
-.noUi-connect {
-    background-color: var(--ColorPrimaria);
-}
+    .noUi-connect {
+        background-color: var(--ColorPrimaria);
+    }
 
-.noUi-horizontal {
-    height: 6px;
-}
+    .noUi-horizontal {
+        height: 6px;
+    }
 
     .noUi-handle:before,
     .noUi-handle:after {
@@ -231,7 +231,10 @@
         background-color: #e0e0e0;
     }
 
-    .fa.fa-pinterest, .fa.fa-instagram, .fa.fa-twitter, .fa.fa-facebook{
+    .fa.fa-pinterest,
+    .fa.fa-instagram,
+    .fa.fa-twitter,
+    .fa.fa-facebook {
         margin-top: 12px;
     }
 </style>

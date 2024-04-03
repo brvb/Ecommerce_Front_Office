@@ -39,6 +39,12 @@ class MasterController extends Controller
         $categories = Category::all();
         return view('paginas.pagina-checkout', compact('categories'));
     }
+
+    public function ofertaPage()
+    {
+        $categories = Category::all();
+        return view('paginas.pagina-oferta', compact('categories'));
+    }
     public function filtroProductsPage()
     {
         $categories = Category::all();
