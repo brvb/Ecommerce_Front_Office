@@ -22,36 +22,9 @@
                             <input type="text" id="counter1" value="1">
                             <button onclick="increment(1)">+</button>
                         </div>
-                        <a href="#">Remover</a>                   
+                        <a href="#">Remover</a>
                     </div>
 
-                    <div>
-                        <p>1X62.30€</p>
-                        <h4>62.30€</h4>
-                    </div>
-                </div>
-            </div>
-            <hr>
-            <div class="row">
-                <div class="col-7 d-flex">
-                  
-                        <div class="img-item"><img src="{{ asset('./assets/images/product01.png') }}" alt=""></div>
-                        <div class="info-item">
-                            <h5>Kettlebell de Competição</h5>
-                            <p>Referência: CK020</p>
-                            <p>Peso: 20KG</p>
-                        </div>
-                   
-                </div>
-                <div class="col-5 d-flex justify-content-between">
-                    <div class="camp-qtd">
-                        <div class="d-flex">
-                            <button onclick="decrement(2)">-</button>
-                            <input type="text" id="counter2" value="1">
-                            <button onclick="increment(2)">+</button>
-                        </div>
-                        <a href="#">Remover</a>                   
-                    </div>
                     <div>
                         <p>1X62.30€</p>
                         <h4>62.30€</h4>
