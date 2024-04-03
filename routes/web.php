@@ -25,6 +25,8 @@ Route::get('/product-details/{id}', [MasterController::class, 'productDetails'])
 
 Route::get('/checkout', [MasterController::class, 'checkoutPage'])->name('checkout');
 
+Route::get('/oferta', [MasterController::class, 'ofertaPage'])->name('oferta');
+
 Route::get('/filtro-products', [MasterController::class, 'filtroProductsPage'])->name('filtro-products');
 
 Route::get('/contacto', [MasterController::class, 'contactoPage'])->name('contacto');
