@@ -33,15 +33,15 @@
             </div>
             <hr>
             <div class="row">
-                <div class="col-7">
-                    <div class="col-7 d-flex">
+                <div class="col-7 d-flex">
+                  
                         <div class="img-item"><img src="{{ asset('./assets/images/product01.png') }}" alt=""></div>
                         <div class="info-item">
                             <h5>Kettlebell de Competição</h5>
                             <p>Referência: CK020</p>
                             <p>Peso: 20KG</p>
                         </div>
-                    </div>
+                   
                 </div>
                 <div class="col-5 d-flex justify-content-between">
                     <div class="camp-qtd">
@@ -72,7 +72,7 @@
             <br>
             <div class="d-flex camp-cupao">
                 <input type="text" placeholder="Cupão de desconto">
-                <button class="btn">Aplicar</button>
+                <button class="btn btn-primary">Aplicar</button>
             </div>
             <br>
             <div class="d-flex justify-content-between">
