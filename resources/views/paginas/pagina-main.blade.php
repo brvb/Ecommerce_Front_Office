@@ -1,5 +1,4 @@
 @extends('main')
-
 @section('pagina-main')
     <div>
         <div class="section">

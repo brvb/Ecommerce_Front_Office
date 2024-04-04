@@ -1,4 +1,64 @@
+<style>
+    /*BANNER INFO*/
+    .short-quick-info {
+       background: var(--ColorPrimaria);
+       color: #fff;
+   }
+
+   .short-quick-info__inner-container {
+       display: flex;
+       justify-content: center;
+       overflow-x: auto;
+       padding: 0.8rem;
+       padding-top: 1.7rem;
+       width: 100%;
+       height: auto;
+       margin-top: 2rem;
+       box-shadow: 0px 3px 7px 0px #4b4b4b59
+   }
+
+   .short-quick-info__item[data-v-a378a940] {
+       display: flex;
+       flex-shrink: 0;
+       gap: .5rem;
+       text-decoration: none;
+       align-items: stretch;
+   }
+
+   div.scroll-content--no-scroll {
+       display: flex;
+       flex-wrap: wrap;
+       gap: 3rem;
+       width: 100%;
+   }
+</style>
 <footer id="footer">
+    <section class="short-quick-info" data-v-4dedc72a="" data-v-ac020ae7="">
+        <div class="short-quick-info__inner-container" data-v-ac020ae7="">
+            <div class="scroll-content--center scroll-content short-quick-info__wrapper wrapper" data-v-ac020ae7=""
+                data-v-6ed89f23=""><!---->
+                <div class="scroll-content--no-scroll scroll-content__container" data-v-6ed89f23="">
+                    <!--[--><!--[--><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
+                        data-v-a378a940="">
+                        <i class="fa-regular fa-building" style="color: #ffffff; font-size:2rem;"></i>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Entregas grátis em loja</p>
+                    </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
+                        data-v-a378a940="">
+                        <i class="fa-solid fa-rotate-left" style="color: #ffffff; font-size:2rem;"></i>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Devoluções grátis em loja</p>
+                    </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
+                        data-v-a378a940="">
+                        <i class="fa-regular fa-credit-card" style="color: #ffffff; font-size:2rem;"></i>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">3x s/juros** TAEG 18.6%</p>
+                    </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
+                        data-v-a378a940="">
+                        <i class="fa-solid fa-euro-sign" style="color: #ffffff; font-size:2rem;"></i>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Preço mínimo garantido</p>
+                    </app-link><!--]--><!--]-->
+                </div><!---->
+            </div>
+        </div>
+    </section>
     <!-- top footer -->
     <div class="section">
         <!-- container -->
