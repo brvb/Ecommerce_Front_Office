@@ -32,6 +32,7 @@ var addToCartButtons = document.querySelectorAll('.add-to-cart-btn');
 addToCartButtons.forEach(function(button) {
     button.addEventListener('click', function(event) {
         var productId = button.getAttribute('data-product');
+        var quantity = button.getAttribute('data-quantity');
 
         $.ajax({
             url: '/product-details/' + productId,
@@ -39,7 +40,15 @@ addToCartButtons.forEach(function(button) {
             success: function(response) {
                 var productDetails = response;
 
-                localStorage.setItem('cartProduct_' + productId, JSON.stringify(productDetails));
+                localStorage.setItem('cartProduct_' + productId, JSON.stringify({
+                    productDetails,
+                    quantity
+                }));
+
+                console.log('Produto ID:', productId);
+                console.log('Detalhes do Produto:', productDetails);
+                console.log('Quantidade:', quantity);
+
                 renderProductInCart(productId, productDetails);
                 updateTotalItems();
                 calculateTotalPrice();
@@ -51,7 +60,7 @@ addToCartButtons.forEach(function(button) {
         });
 
         event.preventDefault();
-
+        
     });
 });
 
@@ -77,8 +86,8 @@ function renderProductInCart(productId, productDetails) {
     var productImg = document.createElement('div');
     productImg.classList.add('product-img');
     var img = document.createElement('img');
-    img.setAttribute('src', productDetails.image_name);
-    img.setAttribute('alt', productDetails.image_name);
+    img.setAttribute('src', productDetails.productDetails.image_name);
+    img.setAttribute('alt', productDetails.productDetails.image_name);
     productImg.appendChild(img);
 
     var productBody = document.createElement('div');
@@ -87,11 +96,11 @@ function renderProductInCart(productId, productDetails) {
     productName.classList.add('product-name');
     var productNameLink = document.createElement('a');
     productNameLink.setAttribute('href', '#');
-    productNameLink.textContent = productDetails.product_name;
+    productNameLink.textContent = productDetails.productDetails.product_name;
     productName.appendChild(productNameLink);
     var productPrice = document.createElement('h4');
     productPrice.classList.add('product-price');
-    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.price;
+    productPrice.innerHTML = '<span class="qty">1x</span>$' + productDetails.productDetails.price;
 
     productBody.appendChild(productName);
     productBody.appendChild(productPrice);

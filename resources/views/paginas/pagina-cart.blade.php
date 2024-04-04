@@ -64,8 +64,17 @@ function updateTotalItemsPage() {
     
     totalItemsSpanPage.textContent = totalItems;
 }
+function updateTotalPrice(id, quantity) {
+    var productData = JSON.parse(localStorage.getItem('cartProduct_' + id));
+    var totalPrice = parseFloat(productData.productDetails.price) * quantity;
+    var priceElement = document.getElementById('total-price-' + id);
+    priceElement.textContent = totalPrice.toFixed(2) + "€";
+}
 
 function renderProductInCartPage(productId, productDetails) {
+    var productData = JSON.parse(localStorage.getItem('cartProduct_' + productId));
+    var quantity = productData.quantity;
+
     var cartContainerLine = document.getElementById('cart-container-line');
 
     // Criar elementos HTML
@@ -78,18 +87,18 @@ function renderProductInCartPage(productId, productDetails) {
     var imgItemDiv = document.createElement("div");
     imgItemDiv.classList.add("img-item");
     var img = document.createElement("img");
-    img.setAttribute("src", productDetails.image_name);
+    img.setAttribute("src", productDetails.productDetails.image_name);
     img.setAttribute("alt", "");
     imgItemDiv.appendChild(img);
 
     var infoItemDiv = document.createElement("div");
     infoItemDiv.classList.add("info-item");
     var h5 = document.createElement("h5");
-    h5.textContent = productDetails.product_name;
+    h5.textContent = productDetails.productDetails.product_name;
     var p1 = document.createElement("p");
-    p1.textContent = "Referência: " + productDetails.id;
+    p1.textContent = "Referência: " + productDetails.productDetails.id;
     var p2 = document.createElement("p");
-    p2.textContent = "Peso: " + productDetails.weight;
+    p2.textContent = "Peso: " + productDetails.productDetails.weight;
     infoItemDiv.appendChild(h5);
     infoItemDiv.appendChild(p1);
     infoItemDiv.appendChild(p2);
@@ -110,7 +119,7 @@ function renderProductInCartPage(productId, productDetails) {
     var input = document.createElement("input");
     input.setAttribute("type", "text");
     input.setAttribute("id", "counter" + productId);
-    input.setAttribute("value", "1");
+    input.setAttribute("value", quantity);
     var incrementButton = document.createElement("button");
     incrementButton.textContent = "+";
     incrementButton.setAttribute("onclick", "increment(" + productId + ")");
@@ -125,11 +134,16 @@ function renderProductInCartPage(productId, productDetails) {
 
     var priceDiv = document.createElement("div");
     var p3 = document.createElement("p");
-    p3.textContent = "1X" + productDetails.price + "€";
+    p3.id = "quantity-text-" + productId; // Adicionando o id dinamicamente
+    p3.textContent = quantity + "X" + productDetails.productDetails.price + "€";
+
     var h4 = document.createElement("h4");
-    h4.textContent = productDetails.price + "€";
+    h4.id = "total-price-" + productId;
+    var totalPrice = parseFloat(productDetails.productDetails.price) * quantity;
+    h4.textContent = totalPrice.toFixed(2) + "€";
     priceDiv.appendChild(p3);
     priceDiv.appendChild(h4);
+
 
     col5Div.appendChild(campQtdDiv);
     col5Div.appendChild(priceDiv);
@@ -139,11 +153,19 @@ function renderProductInCartPage(productId, productDetails) {
 
     cartContainerLine.appendChild(rowDiv);
 }
-
 function increment(id) {
     var counter = document.getElementById('counter'+ id);
     var value = parseInt(counter.value);
     counter.value = value + 1;
+
+    var productData = JSON.parse(localStorage.getItem('cartProduct_' + id));
+    productData.quantity = value + 1;
+    localStorage.setItem('cartProduct_' + id, JSON.stringify(productData));
+
+    updateTotalPrice(id, value + 1);
+
+    // Atualizar o texto da quantidade e do preço total
+    updateProductQuantityAndPrice(id, value + 1);
 }
 
 function decrement(id) {
@@ -151,7 +173,30 @@ function decrement(id) {
     var value = parseInt(counter.value);
     if (value > 1) {
         counter.value = value - 1;
+
+        var productData = JSON.parse(localStorage.getItem('cartProduct_' + id));
+        productData.quantity = value - 1;
+        localStorage.setItem('cartProduct_' + id, JSON.stringify(productData));
+
+        updateTotalPrice(id, value - 1);
+
+        // Atualizar o texto da quantidade e do preço total
+        updateProductQuantityAndPrice(id, value - 1);
     }
 }
+
+function updateProductQuantityAndPrice(id, quantity) {
+    var p3 = document.getElementById('quantity-text-' + id);
+    var totalPriceElement = document.getElementById('total-price-' + id);
+
+    var productData = JSON.parse(localStorage.getItem('cartProduct_' + id));
+    var price = parseFloat(productData.productDetails.price);
+    var totalPrice = price * quantity;
+
+    p3.textContent = quantity + "X" + price.toFixed(2) + "€";
+    totalPriceElement.textContent = totalPrice.toFixed(2) + "€";
+}
+
+
 </script>
 @endsection
