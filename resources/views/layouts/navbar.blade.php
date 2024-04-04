@@ -63,7 +63,7 @@
                             @endforeach
                         </div>
                     </li>
-                    <li class="{{ Str::contains(request()->route()->getName(), 'oferta') ? 'active' : '' }}"><a href="{{ route('oferta') }}">Oferta do dia</a></li>
+                    <li class="{{ Str::contains(request()->route()->getName(), 'oferta') ? 'active' : '' }}"><a href="{{ route('oferta') }}">Ofertas do dia</a></li>
                     <li><a href="#">Histórico</a></li>
                     <li class="{{ Str::contains(request()->route()->getName(), 'filtro-products') ? 'active' : '' }}"><a href="{{ route('filtro-products') }}">Produtos</a></li>
                     <li class="{{ Str::contains(request()->route()->getName(), 'contacto') ? 'active' : '' }}"><a href="{{ route('contacto') }}">Contacto</a></li>

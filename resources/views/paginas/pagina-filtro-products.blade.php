@@ -241,6 +241,7 @@
 @section('pagina-filtro-products')
     <!-- SECTION -->
     <div class="section">
+        @include('layouts.products-rotas')
         <!-- container -->
         <div class="container">
             <!-- row -->

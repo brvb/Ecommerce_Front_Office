@@ -178,7 +178,7 @@ ul, ol {
     background-color: #f9f9f9;
     min-width: 300px;
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    z-index: 11;
+    z-index: 888;
 }
 .dropdown-content .cart-list {
     display: block;
@@ -371,7 +371,7 @@ ul, ol {
   position: absolute;
   display: none;
   font-size: 13px;
-  z-index: 11;
+  z-index: 888;
   min-width: 200px;
   margin-top: 20px;
   background-color: #FFF;
@@ -425,7 +425,7 @@ ul, ol {
     position: relative;
     display: none;
     font-size: 13px;
-    z-index: 11;
+    z-index: 888;
     min-width: 150px;
     background-color: #ffffff2d;
     padding-top: 20px;

@@ -1,7 +1,7 @@
 <style>
         #breadcrumb {
         padding: 30px 0px;
-        background: #FBFBFC;
+        background: #ffffff;
         border-bottom: 1px solid #E4E7ED;
         margin-bottom: 30px;
     }
