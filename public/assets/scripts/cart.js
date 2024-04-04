@@ -131,31 +131,19 @@ document.getElementById('clear-localstorage-btn').addEventListener('click', func
     console.log('LocalStorage foi limpo.');
 });
 function updateTotalItems() {
+    var totalItemsSpanCart = document.getElementById('total-itens-card');
     var totalItemsSpan = document.getElementById('total-itens');
     var totalItems = localStorage.length;
+    
     totalItemsSpan.textContent = totalItems;
+    totalItemsSpanCart.textContent = totalItems;
 
-    var pElement = document.getElementById('container-total-itens');
+    var pElement = document.getElementById('total-itens');
     if (totalItems == 0) {
         pElement.classList.add('d-none');
         pElement.classList.remove('d-flex');
     } else {
         pElement.classList.remove('d-none');
         pElement.classList.add('d-flex');
-    }
-    console.log(localStorage);
-}
-
-function increment(id) {
-    var counter = document.getElementById('counter'+ id);
-    var value = parseInt(counter.value);
-    counter.value = value + 1;
-}
-
-function decrement(id) {
-    var counter = document.getElementById('counter'+ id);
-    var value = parseInt(counter.value);
-    if (value > 1) {
-        counter.value = value - 1;
     }
 }

@@ -22,6 +22,7 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('idcategory');
             $table->decimal('price', 8, 2);
             $table->decimal('old_price', 8, 2)->nullable();
+            $table->decimal('weight', 8, 2)->nullable();
             $table->boolean('sale')->default(false);
             $table->timestamps();
 

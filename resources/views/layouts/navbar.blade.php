@@ -20,14 +20,14 @@
                 <div class="dropdown icon">
                     <span id="dropdown-cart">
                         <i class="fa-solid fa-cart-shopping"></i>
-                        <p class="number d-none" id="container-total-itens"><span id="total-itens"></span></p>
+                        <p class="number d-none" id="total-itens"></p>
                     </span>
                     <div class="dropdown-content" id="dropdown-content-container">
                         <div class="cart-list">
                             <div id="cart-container"></div>
                         </div>
                         <div class="cart-summary">
-                            <small><span id="total-itens"></span> Item(s) selected</small>
+                            <small><span id="total-itens-card"></span> Item(s) selected</small>
                             <h5>SUBTOTAL:<span id="total-price"></span></h5>
                         </div>
                         <div class="cart-btns">
