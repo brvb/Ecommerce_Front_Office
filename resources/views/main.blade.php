@@ -59,6 +59,9 @@
         @yield('pagina-filtro-products')
     </div>
     <div class="container">
+        @yield('layouts-card-promo')
+    </div>
+    <div class="container">
         @yield('pagina-contacto')
     </div>
 
