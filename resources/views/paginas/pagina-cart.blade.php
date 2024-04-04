@@ -26,7 +26,7 @@
             <br>
             <div class="d-flex justify-content-between">
                 <p>Sub-Total</p>
-                <h5>143.30€</h5>
+                <h5 id="value-cart-subTotal">143.30€</h5>
             </div>
             <hr>
             <div class="d-flex justify-content-between camp-total">
@@ -77,7 +77,6 @@ function renderProductInCartPage(productId, productDetails) {
 
     var cartContainerLine = document.getElementById('cart-container-line');
 
-    // Criar elementos HTML
     var rowDiv = document.createElement("div");
     rowDiv.classList.add("row");
 
@@ -134,7 +133,7 @@ function renderProductInCartPage(productId, productDetails) {
 
     var priceDiv = document.createElement("div");
     var p3 = document.createElement("p");
-    p3.id = "quantity-text-" + productId; // Adicionando o id dinamicamente
+    p3.id = "quantity-text-" + productId;
     p3.textContent = quantity + "X" + productDetails.productDetails.price + "€";
 
     var h4 = document.createElement("h4");
@@ -163,8 +162,6 @@ function increment(id) {
     localStorage.setItem('cartProduct_' + id, JSON.stringify(productData));
 
     updateTotalPrice(id, value + 1);
-
-    // Atualizar o texto da quantidade e do preço total
     updateProductQuantityAndPrice(id, value + 1);
 }
 
@@ -179,20 +176,21 @@ function decrement(id) {
         localStorage.setItem('cartProduct_' + id, JSON.stringify(productData));
 
         updateTotalPrice(id, value - 1);
-
-        // Atualizar o texto da quantidade e do preço total
         updateProductQuantityAndPrice(id, value - 1);
     }
 }
 
 function updateProductQuantityAndPrice(id, quantity) {
     var p3 = document.getElementById('quantity-text-' + id);
+    var subTotal = document.getElementById('value-cart-subTotal');
+
     var totalPriceElement = document.getElementById('total-price-' + id);
 
     var productData = JSON.parse(localStorage.getItem('cartProduct_' + id));
     var price = parseFloat(productData.productDetails.price);
     var totalPrice = price * quantity;
 
+    subTotal.textContent = totalPrice.toFixed(2) + "€";
     p3.textContent = quantity + "X" + price.toFixed(2) + "€";
     totalPriceElement.textContent = totalPrice.toFixed(2) + "€";
 }
