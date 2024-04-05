@@ -633,8 +633,8 @@
   }
 
   .products-slick-nav .slick-prev:before, .products-slick-nav .slick-next:before {
-    font-size: 1.8rem;
-    color: #131313;
+    font-size: 2rem;
+    color: #0964af;
   }
 
   /*=========================================================

@@ -89,7 +89,7 @@
                                             <div class="product">
                                                 <a href="{{ route('product', $product->id) }}"></a>
                                                 <div class="product-img">
-                                                    <img src="{{ asset('./assets/images/product01.png') }}" alt="">
+                                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
                                                     <div class="product-label">
                                                         @if ($product->sale != 0 && !is_null($product->sale))
                                                             <span class="sale" wire:ignore>-{{ $product->sale }}%</span>
@@ -273,8 +273,7 @@
                                             <div class="product">
                                                 <a href="{{ route('product', $product->id) }}"></a>
                                                 <div class="product-img">
-                                                    <img src="{{ asset('./assets/images/product01.png') }}"
-                                                        alt="">
+                                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
                                                     <div class="product-label">
                                                         @if ($product->sale != 0 && !is_null($product->sale))
                                                             <span class="sale" wire:ignore>-{{ $product->sale }}%</span>

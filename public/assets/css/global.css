@@ -218,9 +218,10 @@ ul, ol {
     width: 60px;
   }
 
-  .product-widget .product-img>img {
+  .product .product-img>img {
     width: 100%;
-  }
+    padding: 2rem;
+}
 
   .product-widget .product-body {
     padding-left: 75px;

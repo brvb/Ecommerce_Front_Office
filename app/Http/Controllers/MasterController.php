@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Category;
 use App\Models\Products;
 use App\Models\Reviews;
+use App\Models\Products_filtros;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -49,8 +50,10 @@ class MasterController extends Controller
     }
     public function filtroProductsPage()
     {
+        $reviews = Reviews::all();
+        $products_filtros = Products_filtros::all();
         $categories = Category::all();
-        return view('paginas.pagina-filtro-products', compact('categories'));
+        return view('paginas.pagina-filtro-products', compact('categories','products_filtros','reviews'));
     }
     public function contactoPage()
     {
