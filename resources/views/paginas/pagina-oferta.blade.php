@@ -89,17 +89,15 @@
 
 
 
-/*Products*/
-    div.products-tabs{
+    /*Products*/
+    div.products-tabs {
         margin-top: 2rem;
         margin-bottom: 7rem
     }
 
-    .slick-slide{
-        height:93.8% !important;
+    .slick-slide {
+        height: 93.8% !important;
     }
-
-
 </style>
 @section('pagina-oferta')
     <div class="container-swiper">
@@ -194,16 +192,14 @@
                             <div class="product">
                                 <a href="{{ route('product', $product->id) }}"></a>
                                 <div class="product-img">
-                                    <img src="{{ asset('./assets/images/product01.png') }}" alt="">
+                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
                                     <div class="product-label">
                                         @if ($product->sale != 0 && !is_null($product->sale))
                                             <span class="sale" wire:ignore>-{{ $product->sale }}%</span>
                                         @endif
                                         @php
                                             $lastUpdated = \Carbon\Carbon::parse($product->updated_at);
-                                            $difference = $lastUpdated->diffInDays(
-                                                \Carbon\Carbon::now(),
-                                            );
+                                            $difference = $lastUpdated->diffInDays(\Carbon\Carbon::now());
                                             $isNewProduct = $difference < 7;
                                         @endphp
                                         @if ($isNewProduct)
@@ -220,8 +216,7 @@
                                         @endforeach
 
                                     </p>
-                                    <h3 class="product-name"><a
-                                            href="#">{{ $product->product_name }}</a></h3>
+                                    <h3 class="product-name"><a href="#">{{ $product->product_name }}</a></h3>
                                     <h4 class="product-price">
                                         {{ $product->price }}
                                         <del class="product-old-price">
@@ -267,14 +262,13 @@
                                                 class="tooltipp">add to wishlist</span></button>
                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span
                                                 class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><a
-                                                href="{{ route('product', $product->id) }}"><i
+                                        <button class="quick-view"><a href="{{ route('product', $product->id) }}"><i
                                                     class="fa fa-eye"></i><span class="tooltipp">quick
                                                     view</span></a></button>
                                     </div>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}">
+                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
                                         <i class="fa fa-shopping-cart"></i> add to cart
                                     </button>
 
