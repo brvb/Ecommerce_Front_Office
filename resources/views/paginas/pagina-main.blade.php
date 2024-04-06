@@ -1,5 +1,4 @@
 @extends('main')
-
 @section('pagina-main')
     <div>
         <div class="section">
@@ -90,7 +89,7 @@
                                             <div class="product">
                                                 <a href="{{ route('product', $product->id) }}"></a>
                                                 <div class="product-img">
-                                                    <img src="{{ asset('./assets/images/product01.png') }}" alt="">
+                                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
                                                     <div class="product-label">
                                                         @if ($product->sale != 0 && !is_null($product->sale))
                                                             <span class="sale" wire:ignore>-{{ $product->sale }}%</span>
@@ -170,7 +169,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}">
+                                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
                                                         <i class="fa fa-shopping-cart"></i> add to cart
                                                     </button>
 
@@ -274,8 +273,7 @@
                                             <div class="product">
                                                 <a href="{{ route('product', $product->id) }}"></a>
                                                 <div class="product-img">
-                                                    <img src="{{ asset('./assets/images/product01.png') }}"
-                                                        alt="">
+                                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
                                                     <div class="product-label">
                                                         @if ($product->sale != 0 && !is_null($product->sale))
                                                             <span class="sale" wire:ignore>-{{ $product->sale }}%</span>

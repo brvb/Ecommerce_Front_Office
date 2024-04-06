@@ -29,7 +29,7 @@
         min-width: 1100px;
         min-height: 580px;
         display: flex;
-        z-index: 800;
+        z-index: 666;
     }
 
     .container-contacto .contactoInfo ul.info li span:nth-child(2) {
