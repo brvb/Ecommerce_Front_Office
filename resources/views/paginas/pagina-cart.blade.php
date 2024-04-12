@@ -163,6 +163,8 @@ function increment(id) {
 
     updateTotalPrice(id, value + 1);
     updateProductQuantityAndPrice(id, value + 1);
+    console.log(JSON.stringify(productData));
+
 }
 
 function decrement(id) {
@@ -178,6 +180,7 @@ function decrement(id) {
         updateTotalPrice(id, value - 1);
         updateProductQuantityAndPrice(id, value - 1);
     }
+    console.log(JSON.stringify(productData));
 }
 
 function updateProductQuantityAndPrice(id, quantity) {
@@ -194,7 +197,5 @@ function updateProductQuantityAndPrice(id, quantity) {
     p3.textContent = quantity + "X" + price.toFixed(2) + "€";
     totalPriceElement.textContent = totalPrice.toFixed(2) + "€";
 }
-
-
 </script>
 @endsection
