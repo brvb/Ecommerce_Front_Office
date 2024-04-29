@@ -193,41 +193,41 @@
         <!-- /SECTION -->
 
         <!-- HOT DEAL SECTION -->
-        <div id="hot-deal" class="section">
+        <div id="hot-deal" class="section" style="background-image: url('{{$promotions[0]->image_banner}}');">
             <!-- container -->
             <div class="container">
                 <!-- row -->
                 <div class="row">
                     <div class="col-md-12">
                         <div class="hot-deal">
-                            <ul class="hot-deal-countdown">
+                            <ul id="countdown" class="hot-deal-countdown">
                                 <li>
                                     <div>
-                                        <h3>02</h3>
+                                        <h3 class="days">0</h3>
                                         <span>Days</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
-                                        <h3>10</h3>
+                                        <h3 class="hours">0</h3>
                                         <span>Hours</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
-                                        <h3>34</h3>
+                                        <h3 class="minutes">0</h3>
                                         <span>Mins</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
-                                        <h3>60</h3>
+                                        <h3 class="seconds">0</h3>
                                         <span>Secs</span>
                                     </div>
                                 </li>
                             </ul>
-                            <h2 class="text-uppercase">hot deal this week</h2>
-                            <p>New Collection Up to 50% OFF</p>
+                            <h2 class="text-uppercase">{{$promotions[0]->title}}</h2>
+                            <p>{{$promotions[0]->description}}</p>
                             <a class="primary-btn cta-btn" href="#">Shop now</a>
                         </div>
                     </div>
@@ -266,7 +266,7 @@
                         <div class="row">
                             <div class="products-tabs">
                                 <!-- tab -->
-                                <div id="tab2" class="tab-pane fade in active">
+                                <div id="tab1" class="tab-pane fade in active">
                                     <div class="products-slick" data-nav="#slick-nav-2">
                                         <!-- product -->
                                         @foreach ($products as $product)
@@ -353,7 +353,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="add-to-cart">
-                                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}">
+                                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
                                                         <i class="fa fa-shopping-cart"></i> add to cart
                                                     </button>
 
@@ -376,4 +376,25 @@
         </div>
         <!-- /SECTION -->
     </div>
+    <script>
+        function updateCountdown(endDate) {
+            var now = new Date().getTime();
+            var distance = endDate - now;
+
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.querySelector('#countdown .days').innerText = days;
+            document.querySelector('#countdown .hours').innerText = hours;
+            document.querySelector('#countdown .minutes').innerText = minutes;
+            document.querySelector('#countdown .seconds').innerText = seconds;
+        }
+        var endDate = new Date("{{ $promotions[0]->date }}").getTime();
+
+        setInterval(function() {
+            updateCountdown(endDate);
+        }, 1000);
+    </script>
 @endsection

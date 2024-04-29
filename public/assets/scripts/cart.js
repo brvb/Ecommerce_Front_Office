@@ -54,9 +54,6 @@ addToCartButtons.forEach(function(button) {
                     quantity: quantity
                 }));
     
-                console.log('Produto ID:', productId);
-                console.log('Detalhes do Produto:', productDetails);
-                console.log('Quantidade:', quantity);
     
                 updateTotalItems();
                 calculateTotalPrice();
@@ -95,6 +92,7 @@ function renderProductInCart(productId, productDetails) {
     var cartContainer = document.getElementById('cart-container');
     var productWidget = document.createElement('div');
     productWidget.classList.add('product-widget');
+    productWidget.id = 'cart-item-' + productId;
 
     var productImg = document.createElement('div');
     productImg.classList.add('product-img');
@@ -113,7 +111,7 @@ function renderProductInCart(productId, productDetails) {
     productName.appendChild(productNameLink);
     var productPrice = document.createElement('h4');
     productPrice.classList.add('product-price');
-    productPrice.innerHTML = '<span class="qty">'+ quantity + 'x</span>$' + productDetails.price;
+    productPrice.innerHTML = '<span class="qty" id="qty-' + productId + '">'+ quantity + 'x</span>$' + productDetails.price;
 
     productBody.appendChild(productName);
     productBody.appendChild(productPrice);
@@ -134,6 +132,32 @@ function renderProductInCart(productId, productDetails) {
 
     cartContainer.appendChild(productWidget);
     updateTotalItems()
+    recalcularSomatotalCart()
+}
+function recalcularSomatotalCart() {
+
+    var totalItemsSpan = document.getElementById('total-itens');
+    var totalItemsSpanCart = document.getElementById('total-itens-card');
+
+    var totalQuantityJuntos = 0;
+    var totalPriceJuntos = 0;
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith('cartProduct_')) {
+            var productId = key.replace('cartProduct_', '');
+            var productDetails = JSON.parse(localStorage.getItem(key));
+
+            var quantity = productDetails.quantity;
+            var price = productDetails.productDetails.price;
+
+            var totalPrice = price * quantity;
+            totalPriceJuntos += totalPrice;
+            totalQuantityJuntos = totalQuantityJuntos + Number(quantity)
+        }
+    }
+    totalItemsSpanCart.textContent = totalQuantityJuntos;
+    totalItemsSpan.textContent = totalQuantityJuntos;
+
 }
 
 function calculateTotalPrice() {
@@ -146,20 +170,26 @@ function calculateTotalPrice() {
         totalPrice += price;
     });
 
-    var totalPriceElement = document.getElementById('total-price');
-    totalPriceElement.textContent = '$' + totalPrice.toFixed(2);
-}
-document.getElementById('clear-localstorage-btn').addEventListener('click', function() {localStorage.clear();
-    console.log('LocalStorage foi limpo.');
-});
-function updateTotalItems() {
-    var totalItemsSpanCart = document.getElementById('total-itens-card');
-    var totalItemsSpan = document.getElementById('total-itens');
-    var totalItems = localStorage.length;
-    
-    totalItemsSpan.textContent = totalItems;
-    totalItemsSpanCart.textContent = totalItems;
+    var totalPriceJuntos = 0;
+    for (var i = 0; i < localStorage.length; i++) {
+        var key = localStorage.key(i);
+        if (key.startsWith('cartProduct_')) {
+            var productId = key.replace('cartProduct_', '');
+            var productDetails = JSON.parse(localStorage.getItem(key));
 
+            var quantity = productDetails.quantity;
+            var price = productDetails.productDetails.price;
+
+            var totalPrice = price * quantity;
+            totalPriceJuntos += totalPrice;
+        
+        }
+    }
+    var totalPriceElement = document.getElementById('total-price');
+    totalPriceElement.textContent = totalPriceJuntos.toFixed(2) + "€";
+}
+function updateTotalItems() {
+    var totalItems = localStorage.length;
     var pElement = document.getElementById('total-itens');
     if (totalItems == 0) {
         pElement.classList.add('d-none');
