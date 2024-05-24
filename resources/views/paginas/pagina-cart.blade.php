@@ -12,7 +12,7 @@
                 <div class="d-flex justify-content-between">
                     <a href="{{ route('/') }}"><i class="fa-solid fa-arrow-left"></i> Voltar à loja</a>
                     <span class="btn_checkout">
-                        <button type="submit" class="btn">Checkout</button>
+                        <a href="{{ route('checkout') }}"><button type="submit" class="btn">Checkout</button></a>
                         <p>Li e aceito os <a href="#">Termos e condições</a></p>
                     </span>
                 </div>

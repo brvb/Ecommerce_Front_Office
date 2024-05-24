@@ -389,7 +389,7 @@
                     <!-- aside Widget -->
                     <div class="aside">
                         <h3 class="aside-title">Top selling</h3>
-                        @foreach ($products_filtros as $product)
+                        @foreach ($products as $product)
                             <div class="product-widget"><a href="{{ route('product', $product->id) }}">
                                 <div class="product-img">
                                     <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
@@ -453,7 +453,7 @@
 
                     <!-- store products -->
                     <div class="row">
-                        @foreach ($products_filtros as $product)
+                        @foreach ($products as $product)
                             <div class="col-md-4 col-xs-6">
                                 <div class="product">
                                     <div class="product-img">

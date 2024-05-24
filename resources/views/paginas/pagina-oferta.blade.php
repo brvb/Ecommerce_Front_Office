@@ -87,7 +87,25 @@
         transform: scale(1.1);
     }
 
-
+    .btn-card-promotion{
+        position: relative;
+        border: 2px solid transparent;
+        height: 40px;
+        padding: 0 30px;
+        background-color: var(--ColorPrimaria);
+        color: #FFF;
+        font-weight: 700;
+        border-radius: 40px;
+        -webkit-transition: 0.2s all;
+        transition: 0.2s all;
+    }
+    .promotion-img{
+        background: var(--ColorPrimaria);
+        border-radius: 10px 10px 0 0;
+    }
+    .promotions-card{
+        border-radius:10px;
+    }
 
     /*Products*/
     div.products-tabs {
@@ -98,9 +116,137 @@
     .slick-slide {
         height: 93.8% !important;
     }
+    
+  .dropdown-filter {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropdown-filter-btn {
+    background-color: #fafafa;
+    border: 1px solid #797979 !important;
+    border-radius: 5px;
+    color: rgb(0, 0, 0);
+    width: 250px; 
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+  }
+  .dropdown-filter-btn p{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin:0;
+  }
+
+  .dropdown-filter-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    border: 1px solid #797979 !important;
+    border-top: 0px  !important;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    animation: slideDown 0.5s ease;
+    z-index: 1;
+    height: 150px;
+    width: 250px;
+    overflow-y: auto;
+  }
+  .dropdown-filter-btn span{
+    color: black;
+    position: absolute;
+    top: -8px;
+    font-size: 11px;
+    padding: 0 4px;
+    background-color: #f9f9f9;
+  }
+
+  .dropdown-filter-content a {
+    color: black;
+    padding: 10px 20px;
+    text-decoration: none;
+    display: block;
+  }
+
+  .dropdown-filter-content a:hover {
+    background-color: #ddd;
+  }
+
+  .dropdown-filter-content ::-webkit-scrollbar {
+    width: 9px;
+    height: 9px;
+  }
+
+  .dropdown-filter-content ::-webkit-scrollbar-button:start:decrement,
+  .dropdown-filter-content ::-webkit-scrollbar-button:end:increment {
+    display: block;
+    height: 0;
+    background-color: #ffffff;
+  }
+
+  .dropdown-filter-content ::-webkit-scrollbar-track-piece {
+    background-color: #ffffff;
+    opacity: 1;
+  }
+
+    /* border-bottom: 0px !important;
+    border-radius:  5px 5px 0 0; */
+
+  @keyframes slideDown {
+    from {
+      height: 0;
+    }
+    to {
+      height: 150px;
+    }
+  }
 </style>
 @section('pagina-oferta')
+
+    
     <div class="container-swiper">
+    
+        <div class="col-md-12">
+            <div class="row">
+                <div class="products-tabs">
+                    <!-- tab -->
+                    <div id="tab2" class="tab-pane fade in active">
+                        <div class="products-slick" data-nav="#slick-nav-2">
+                        @foreach ($promotions as $promotion)
+                            <!-- product -->
+                        
+                                <div class="product promotions-card">
+                                    <div class="product-img promotion-img">
+                                        <img src="{{ asset($promotion->image_card) }}" alt="{{$promotion->image_card}}">
+                                    </div>
+                                    <div class="product-body">
+                                        <h3 class="product-name"><a href="#">{{$promotion->title}}</a></h3>
+
+                                        <p>
+                                        {{$promotion->description}}
+                                        </p>
+                                        <br>
+                                        <button class="btn-card-promotion">
+                                            Ver Produtos
+                                        </button>
+                                    </div>
+                                
+                                </div>
+                            <!-- /product -->
+                        @endforeach
+                        </div>
+                        <div id="slick-nav-2" class="products-slick-nav"></div>
+                    </div>
+                    <!-- /tab -->
+                </div>
+            </div>
+        </div>
+
+  
         <div class="swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper">
@@ -169,7 +315,7 @@
             </div>
             <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
-
+            
             <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
@@ -180,111 +326,132 @@
     </div>
 
     @include('layouts.card-promo')
-
+    <br>
+    <hr style="border: 1px solid #797979;">
     <div class="col-md-12">
+        
+        <div class="container-fluid d-flex justify-content-end">
+            <div class="dropdown-filter">
+                <div class="dropdown-filter-btn" id="dropdown-filter-btn">
+                    <span>Ordenar por</span>
+                    <p>Relevância<i class="fa-solid fa-chevron-down" id="dropdown-icon-filter"></i></p>
+                </div>
+                <div class="dropdown-filter-content" id="dropdown-filter-content">
+                <a href="#">Relevância</a>
+                <a href="#">Preço (mais baixo)</a>
+                <a href="#">Preço (mais alto)</a>
+                <a href="#">Melhor desconto</a>
+                <a href="#">Melhor avaliação</a>
+                </div>
+            </div>
+        </div>
+        <br>
+
         <div class="row">
-            <div class="products-tabs">
-                <!-- tab -->
-                <div id="tab1" class="tab-pane fade in active">
-                    <div class="products-slick" data-nav="#slick-nav-1">
-                        <!-- product -->
-                        @foreach ($products as $product)
-                            <div class="product">
-                                <a href="{{ route('product', $product->id) }}"></a>
-                                <div class="product-img">
-                                    <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
+            @foreach ($products as $product)
+                @if ($product->sale != 0 && !is_null($product->sale))
+                    <div class="col-md-3 col-xs-4">
+                        <div class="product">
+                            <div class="product-img">
+                                <img src="{{ asset($product->image_name) }}" alt="{{ $product->product_name }}">
+                                @if ($product->sale != 0 && !is_null($product->sale))
                                     <div class="product-label">
-                                        @if ($product->sale != 0 && !is_null($product->sale))
-                                            <span class="sale" wire:ignore>-{{ $product->sale }}%</span>
-                                        @endif
-                                        @php
-                                            $lastUpdated = \Carbon\Carbon::parse($product->updated_at);
-                                            $difference = $lastUpdated->diffInDays(\Carbon\Carbon::now());
-                                            $isNewProduct = $difference < 7;
-                                        @endphp
-                                        @if ($isNewProduct)
-                                            <span class="new">NEW</span>
-                                        @endif
+                                        <span class="sale">-{{ $product->sale }}%</span>
                                     </div>
-                                </div>
-                                <div class="product-body">
-                                    <p class="product-category">
-                                        @foreach ($categories as $category)
-                                            @if ($category->id === $product->idcategory)
-                                                <a href="#">{{ $category->title }}</a>
-                                            @endif
-                                        @endforeach
+                                @endif
+                            </div>
+                            <div class="product-body">
+                                <p class="product-category">
+                                    @foreach ($categories as $category)
+                                        @if ($category->id === $product->idcategory)
+                                            <a href="#">{{ $category->title }}</a>
+                                        @endif
+                                    @endforeach
 
-                                    </p>
-                                    <h3 class="product-name"><a href="#">{{ $product->product_name }}</a></h3>
-                                    <h4 class="product-price">
-                                        {{ $product->price }}
-                                        <del class="product-old-price">
-                                            @if ($product->old_price !== null && $product->old_price != 0.0)
-                                                {{ $product->old_price }}
-                                            @endif
+                                </p>
+                                <h3 class="product-name"><a href="#">{{ $product->product_name }}</a></h3>
+                                <h4 class="product-price">
+                                    {{ $product->price }}
+                                    <del class="product-old-price">
+                                        @if ($product->old_price !== null && $product->old_price != 0.0)
+                                            {{ $product->old_price }}
+                                        @endif
 
-                                        </del>
-                                    </h4>
-                                    <div class="product-rating">
+                                    </del>
+                                </h4>
+                                <div class="product-rating">
 
-                                        @php
+                                    @php
 
-                                            $averageRating = 0;
-                                            $totalReviews = 0;
+                                        $averageRating = 0;
+                                        $totalReviews = 0;
 
-                                            foreach ($reviews as $review) {
-                                                if ($review->product_id == $product->id) {
-                                                    $averageRating += $review->product_rating;
-                                                    $totalReviews++;
-                                                }
+                                        foreach ($reviews as $review) {
+                                            if ($review->product_id == $product->id) {
+                                                $averageRating += $review->product_rating;
+                                                $totalReviews++;
                                             }
+                                        }
 
-                                            if ($totalReviews > 0) {
-                                                $averageRating = $averageRating / $totalReviews;
-                                            }
-                                            $averageRating = intval($averageRating);
-                                        @endphp
+                                        if ($totalReviews > 0) {
+                                            $averageRating = $averageRating / $totalReviews;
+                                        }
+                                        $averageRating = intval($averageRating);
+                                    @endphp
 
-                                        @if ($totalReviews == 0)
-                                        @else
-                                            @for ($i = 1; $i <= 5; $i++)
-                                                @if ($i <= $averageRating)
-                                                    <i class="fa fa-star"></i>
-                                                @else
-                                                    <i class="far fa-star"></i>
-                                                @endif
-                                            @endfor
-                                        @endif
-                                    </div>
-                                    <div class="product-btns">
-                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-                                                class="tooltipp">add to wishlist</span></button>
-                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span
-                                                class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><a href="{{ route('product', $product->id) }}"><i
-                                                    class="fa fa-eye"></i><span class="tooltipp">quick
-                                                    view</span></a></button>
-                                    </div>
+                                    @if ($totalReviews == 0)
+                                    @else
+                                        @for ($i = 1; $i <= 5; $i++)
+                                            @if ($i <= $averageRating)
+                                                <i class="fa fa-star"></i>
+                                            @else
+                                                <i class="far fa-star"></i>
+                                            @endif
+                                        @endfor
+                                    @endif
                                 </div>
-                                <div class="add-to-cart">
-                                    <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
-                                        <i class="fa fa-shopping-cart"></i> add to cart
-                                    </button>
-
+                                <div class="product-btns">
+                                    <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
+                                            class="tooltipp">add to wishlist</span></button>
+                                    <button class="add-to-compare"><i class="fa fa-exchange"></i><span
+                                            class="tooltipp">add to compare</span></button>
+                                    <button class="quick-view"><a href="{{ route('product', $product->id) }}"><i
+                                                class="fa fa-eye"></i><span class="tooltipp">quick
+                                                view</span></a></button>
                                 </div>
                             </div>
-                        @endforeach
-                        <!-- /product -->
+                            <div class="add-to-cart">
+                                <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
+                                    <i class="fa fa-shopping-cart"></i> add to cart
+                                </button>
+
+                            </div>
+                        </div>
                     </div>
-                    <div id="slick-nav-1" class="products-slick-nav"></div>
-                </div>
-                <!-- /tab -->
-            </div>
+                @endif
+            @endforeach
         </div>
     </div>
 
     <script>
+
+        function toggledropdownfilter() {
+        var dropdownfilterContent = document.getElementById("dropdown-filter-content");
+        var dropdownfilterIcon = document.getElementById("dropdown-icon-filter");
+
+
+        if (dropdownfilterContent.style.display === "block") {
+            dropdownfilterContent.style.display = "none";
+            dropdownfilterIcon.style.transform =  "rotate(0deg)"
+
+        } else {
+            dropdownfilterContent.style.display = "block";
+            dropdownfilterIcon.style.transform =  "rotate(180deg)"
+        }
+        }
+            document.getElementById("dropdown-filter-btn").addEventListener("click", function() {
+            toggledropdownfilter();
+        });
         const swiper = new Swiper('.swiper', {
             // Optional parameters
             direction: 'horizontal',

@@ -36,6 +36,10 @@
                         </div>
                     </div>
                 </div>
+                <div class="flag-switch icon">
+                    <input type="checkbox" id="check1" {{ app()->getLocale() === 'en' ? 'checked' : '' }}>
+                    <label for="check1"></label>
+                </div>
                 <div class="menu-toggle icon">
                     <a href="#" id="menu-toggle-btn">
                         <i class="fa fa-bars"></i>
@@ -54,9 +58,9 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav navbar-nav">
-                    <li class="{{ Str::contains(request()->route()->getName(), '/') ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
+                    <li class="{{ Str::contains(request()->route()->getName(), '/') ? 'active' : '' }}"><a href="{{ route('/') }}">{{ __('Home') }}</a></li>
                     <li class="paste-button" style="z-index: 998;">
-                        <button class="button"><a>Categories</a></button>
+                        <button class="button"><a>{{ __('Categories') }}</a></button>
                         <div class="dropdown-contente">
                             @foreach($categories as $category)
                                 <a href="#">{{ $category->title }}</a>

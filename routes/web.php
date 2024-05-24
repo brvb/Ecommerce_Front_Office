@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\LanguageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,7 +14,8 @@ use App\Http\Controllers\MasterController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-
+Route::get('/change-language/{locale}', [LanguageController::class, 'changeLanguage'])
+    ->name('change.language');
 
 Route::get('/', [MasterController::class, 'mainPage'])->name('/');
 
