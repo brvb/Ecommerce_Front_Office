@@ -67,12 +67,6 @@
 
     <!-- FOOTER -->
     @include('layouts.footer')
-    <script>
-        document.getElementById('check1').addEventListener('change', function() {
-            var newLocale = this.checked ? 'en' : 'pt'; 
-            window.location.href = '/change-language/' + newLocale;
-        });
-    </script>
     <script src="{{ asset('assets/scripts/cart.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

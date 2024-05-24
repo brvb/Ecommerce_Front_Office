@@ -36,10 +36,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="flag-switch icon">
-                    <input type="checkbox" id="check1" {{ app()->getLocale() === 'en' ? 'checked' : '' }}>
-                    <label for="check1"></label>
+                <!-- vincius -->
+                <div class="flag-switch icon theme" style="top: 20px;width: 25px;height: 25px;">
+                    <input type="checkbox" id="check1" class="input" onchange="window.location.href = this.checked ? '{{ route('language.switch', 'en') }}' : '{{ route('language.switch', 'pt') }}'" {{ app()->getLocale() === 'en' ? 'checked' : '' }}>
+                    <div class="icon2 icon-sun" width="24">pt</div>
+                    <div class="icon2 icon-moon">en</div>
                 </div>
+                <!-- vincius -->
                 <div class="menu-toggle icon">
                     <a href="#" id="menu-toggle-btn">
                         <i class="fa fa-bars"></i>

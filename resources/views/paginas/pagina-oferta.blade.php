@@ -208,49 +208,10 @@
 @section('pagina-oferta')
 
     
-    <div class="container-swiper">
-    
-        <div class="col-md-12">
-            <div class="row">
-                <div class="products-tabs">
-                    <!-- tab -->
-                    <div id="tab2" class="tab-pane fade in active">
-                        <div class="products-slick" data-nav="#slick-nav-2">
-                        @foreach ($promotions as $promotion)
-                            <!-- product -->
-                        
-                                <div class="product promotions-card">
-                                    <div class="product-img promotion-img">
-                                        <img src="{{ asset($promotion->image_card) }}" alt="{{$promotion->image_card}}">
-                                    </div>
-                                    <div class="product-body">
-                                        <h3 class="product-name"><a href="#">{{$promotion->title}}</a></h3>
-
-                                        <p>
-                                        {{$promotion->description}}
-                                        </p>
-                                        <br>
-                                        <button class="btn-card-promotion">
-                                            Ver Produtos
-                                        </button>
-                                    </div>
-                                
-                                </div>
-                            <!-- /product -->
-                        @endforeach
-                        </div>
-                        <div id="slick-nav-2" class="products-slick-nav"></div>
-                    </div>
-                    <!-- /tab -->
-                </div>
-            </div>
-        </div>
-
-  
+    <!-- <div class="container-swiper">
         <div class="swiper">
-            <!-- Additional required wrapper -->
+           
             <div class="swiper-wrapper">
-                <!-- Slides -->
                 <div class="swiper-slide"
                     style="background-image: url('{{ asset('assets/images/slide1.png') }}'); display: flex; align-items: center;">
                     <div class="slider-text-wrapper" style="flex: 1; padding: 0 2rem;">
@@ -313,19 +274,46 @@
                 </div>
                 ...
             </div>
-            <!-- If we need pagination -->
             <div class="swiper-pagination"></div>
             
-            <!-- If we need navigation buttons -->
             <div class="swiper-button-prev"></div>
             <div class="swiper-button-next"></div>
 
-            <!-- If we need scrollbar -->
             <div class="swiper-scrollbar"></div>
         </div>
-    </div>
+    </div> -->
 
     @include('layouts.card-promo')
+    <!-- <div class="col-md-12"> carrossel para mostrar as categorias com promoçoes
+        <div class="row">
+            <div class="products-tabs">
+                <div id="tab2" class="tab-pane fade in active">
+                    <div class="products-slick" data-nav="#slick-nav-2">
+                    @foreach ($promotions as $promotion)
+                            <div class="product promotions-card">
+                                <div class="product-img promotion-img">
+                                    <img src="{{ asset($promotion->image_card) }}" alt="{{$promotion->image_card}}">
+                                </div>
+                                <div class="product-body">
+                                    <h3 class="product-name"><a href="#">{{$promotion->title}}</a></h3>
+
+                                    <p>
+                                    {{$promotion->description}}
+                                    </p>
+                                    <br>
+                                    <button class="btn-card-promotion">
+                                        Ver Produtos
+                                    </button>
+                                </div>
+                            
+                            </div>
+                    @endforeach
+                    </div>
+                    <div id="slick-nav-2" class="products-slick-nav"></div>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <br>
     <hr style="border: 1px solid #797979;">
     <div class="col-md-12">
