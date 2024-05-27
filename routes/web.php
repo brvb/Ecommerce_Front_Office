@@ -14,8 +14,13 @@ use App\Http\Controllers\LanguageController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
-Route::get('/change-language/{locale}', [LanguageController::class, 'changeLanguage'])
-    ->name('change.language');
+
+Route::get('language/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'pt'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('language.switch');
 
 Route::get('/', [MasterController::class, 'mainPage'])->name('/');
 

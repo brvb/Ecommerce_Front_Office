@@ -150,7 +150,7 @@
                                     @endfor
                                 @endif
 								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
+								<a class="review-link" href="#">10 {{ __('Review') }}(s) | {{ __('Add your review') }}</a>
 							</div>
 							<div>
 								<h3 class="product-price">
@@ -162,16 +162,16 @@
                                     </del>
                                 </h3>
                                 @if($product->stock > 0)
-								    <span class="product-available">In Stock</span>
+								    <span class="product-available">{{ __('In Stock') }}</span>
                                 @else
-                                    <span class="product-available-red">Not in Stock</span>
+                                    <span class="product-available-red">{{ __('Not In Stock') }}</span>
                                 @endif
 							</div>
 							<p>{{ $product->Description }}</p>
 
 							<div class="product-options">
 								<label>
-									Size
+									 {{ __('Size') }}
 									<select class="input-select">
 										<option value="0">X</option>
 									</select>

@@ -34,5 +34,20 @@
     "What are some basic technical skills of a Front-End developer?": "Quais são algumas habilidades técnicas básicas de um desenvolvedor Front-End?",
     "Web Development broadly refers to the tasks associated with developing functional websites and applications for the Internet. The web development process includes web design, web content development, client-side/server-side scripting and network security configuration, among other tasks.": "Desenvolvimento Web refere-se amplamente às tarefas associadas ao desenvolvimento de sites e aplicativos funcionais para a Internet. O processo de desenvolvimento web inclui web design, desenvolvimento de conteúdo web, scripts do lado cliente/servidor e configuração de segurança de rede, entre outras tarefas.",
     "FAQ": "Perguntas frequentes",
-    "NEW PRODUCTS": "NOVOS PRODUTOS"
+    "NEW PRODUCTS": "NOVOS PRODUTOS",
+    "Order by": "Ordenar Por",
+    "Relevance": "Relevância",
+    "Lower price":"Preço (mais baixo)",
+    "Price (highest)":"Preço (mais alto)",
+    "Best discount":"Melhor desconto",
+    "Best rating":"Melhor avaliação",
+    "add to wishlist":"adicionar a lista de desejos",
+    "add to compare":"adicionar para comparar",
+    "quick view":"olhada rápida",
+    "add to cart":"adicionar ao carrinho",
+    "Add your review":"Adicione seu comentário",
+    "Review":"Avaliação",
+    "In Stock":"Em estoque",
+    "Not in Stock":"Não está em estoque",
+    "Size":"Tamanho"
 }
