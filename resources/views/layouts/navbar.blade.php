@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <!-- vincius -->
-                <div class="flag-switch icon theme" style="top: 20px;width: 25px;height: 25px;">
+                <div class="flag-switch icon theme" style="top: 23px;width: 21px;height: 21px;">
                     <input type="checkbox" id="check1" class="input" onchange="window.location.href = this.checked ? '{{ route('language.switch', 'en') }}' : '{{ route('language.switch', 'pt') }}'" {{ app()->getLocale() === 'en' ? 'checked' : '' }}>
                     <div class="icon2 icon-sun" width="24">en</div>
                     <div class="icon2 icon-moon">pt</div>

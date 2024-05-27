@@ -716,7 +716,7 @@ ul, ol {
 /* vinicius */
 .theme {
   --bg-color: #111;
-  --main-color: #fefefe;
+  --main-color: aliceblue;
   position: relative;
   display: flex;
   justify-content: center;
@@ -725,7 +725,7 @@ ul, ol {
   height: 30px;
   background-color: var(--bg-color);
   border-radius: 100%;
-  border: 1px solid var(--main-color);
+  border: 1.34px solid var(--main-color);
 }
 
 .input {
@@ -747,13 +747,15 @@ ul, ol {
 
 .icon2.icon-moon {
   fill: var(--main-color);
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .icon2.icon-sun {
   stroke: var(--main-color);
   display: none;
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 500;
 }
 
 .input:checked ~ .icon2.icon-sun {
