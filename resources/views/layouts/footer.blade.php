@@ -41,19 +41,19 @@
                     <!--[--><!--[--><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
                         data-v-a378a940="">
                         <i class="fa-regular fa-building" style="color: #ffffff; font-size:2rem;"></i>
-                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Entregas grátis em loja</p>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">{{ __('Free in-store deliveries') }}</p>
                     </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
                         data-v-a378a940="">
                         <i class="fa-solid fa-rotate-left" style="color: #ffffff; font-size:2rem;"></i>
-                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Devoluções grátis em loja</p>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">{{ __('Free in-store returns') }}</p>
                     </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
                         data-v-a378a940="">
                         <i class="fa-regular fa-credit-card" style="color: #ffffff; font-size:2rem;"></i>
-                        <p class="short-quick-info__title font-s1" data-v-a378a940="">3x s/juros** TAEG 18.6%</p>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">{{ __('3x interest-free** APR 18.6%') }}</p>
                     </app-link><app-link class="short-quick-info__item--link short-quick-info__item" data-v-ac020ae7=""
                         data-v-a378a940="">
                         <i class="fa-solid fa-euro-sign" style="color: #ffffff; font-size:2rem;"></i>
-                        <p class="short-quick-info__title font-s1" data-v-a378a940="">Preço mínimo garantido</p>
+                        <p class="short-quick-info__title font-s1" data-v-a378a940="">{{ __('Guaranteed minimum price') }}</p>
                     </app-link><!--]--><!--]-->
                 </div><!---->
             </div>
@@ -67,7 +67,7 @@
             <div class="row">
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">About Us</h3>
+                        <h3 class="footer-title">{{ __('About Us') }}</h3>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut.</p>
                         <ul class="footer-links">
                             <li><a href="#"><i class="fa fa-map-marker"></i>1734 Stonecoal Road</a></li>
@@ -79,13 +79,13 @@
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Categories</h3>
+                        <h3 class="footer-title">{{ __('Categories') }}</h3>
                         <ul class="footer-links">
                             <li><a href="#">Hot deals</a></li>
                             <li><a href="#">Laptops</a></li>
                             <li><a href="#">Smartphones</a></li>
                             <li><a href="#">Cameras</a></li>
-                            <li><a href="#">Accessories</a></li>
+                            <li><a href="#">{{ __('Accessories') }}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,26 +94,26 @@
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Information</h3>
+                        <h3 class="footer-title">{{ __('Information') }}</h3>
                         <ul class="footer-links">
-                            <li><a href="#">About Us</a></li>
-                            <li><a href="#">Contact Us</a></li>
-                            <li><a href="#">Privacy Policy</a></li>
-                            <li><a href="#">Orders and Returns</a></li>
-                            <li><a href="#">Terms & Conditions</a></li>
+                            <li><a href="#">{{ __('About Us') }}</a></li>
+                            <li><a href="#">{{ __('Contact Us') }}</a></li>
+                            <li><a href="#">{{ __('Privacy Policy') }}</a></li>
+                            <li><a href="#">{{ __('Orders and Returns') }}</a></li>
+                            <li><a href="#">{{ __('Terms and Conditions') }}</a></li>
                         </ul>
                     </div>
                 </div>
 
                 <div class="col-md-3 col-xs-6">
                     <div class="footer">
-                        <h3 class="footer-title">Service</h3>
+                        <h3 class="footer-title">{{ __('Service') }}</h3>
                         <ul class="footer-links">
-                            <li><a href="#">My Account</a></li>
-                            <li><a href="#">View Cart</a></li>
-                            <li><a href="#">Wishlist</a></li>
-                            <li><a href="#">Track My Order</a></li>
-                            <li><a href="#">Help</a></li>
+                            <li><a href="#">{{ __('My Account') }}</a></li>
+                            <li><a href="#">{{ __('View Cart') }}</a></li>
+                            <li><a href="#">{{ __('Wishlist') }}</a></li>
+                            <li><a href="#">{{ __('Track My Order') }}</a></li>
+                            <li><a href="#">{{ __('Help') }}</a></li>
                         </ul>
                     </div>
                 </div>

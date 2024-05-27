@@ -178,43 +178,43 @@
                     <!-- Billing Details -->
                     <div class="billing-details">
                         <div class="section-title">
-                            <h3 class="title">Billing address</h3>
+                            <h3 class="title">{{ __('Billing address') }}</h3>
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="first-name" placeholder="First Name">
+                            <input class="input" type="text" name="first-name" placeholder="{{ __('First Name') }}">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="last-name" placeholder="Last Name">
+                            <input class="input" type="text" name="last-name" placeholder="{{ __('Last Name') }}">
                         </div>
                         <div class="form-group">
                             <input class="input" type="email" name="email" placeholder="Email">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="address" placeholder="Address">
+                            <input class="input" type="text" name="address" placeholder="{{ __('Address') }}">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="city" placeholder="City">
+                            <input class="input" type="text" name="city" placeholder="{{ __('City') }}">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="country" placeholder="Country">
+                            <input class="input" type="text" name="country" placeholder="{{ __('Country') }}">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+                            <input class="input" type="text" name="zip-code" placeholder="{{ __('Zip Code') }}">
                         </div>
                         <div class="form-group">
-                            <input class="input" type="tel" name="tel" placeholder="Telephone">
+                            <input class="input" type="tel" name="tel" placeholder="{{ __('Telephone') }}">
                         </div>
                         <div class="form-group">
                             <div class="input-checkbox">
                                 <input type="checkbox" id="create-account">
                                 <label for="create-account">
                                     <span></span>
-                                    Create Account?
+                                    {{ __('Create Account') }}?
                                 </label>
                                 <div class="caption">
                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                         incididunt.</p>
-                                    <input class="input" type="password" name="password" placeholder="Enter Your Password">
+                                    <input class="input" type="password" name="password" placeholder="{{ __('Enter Your Password') }}">
                                 </div>
                             </div>
                         </div>
@@ -224,38 +224,38 @@
                     <!-- Shiping Details -->
                     <div class="shiping-details">
                         <div class="section-title">
-                            <h3 class="title">Shiping address</h3>
+                            <h3 class="title">{{ __('Shiping address') }}</h3>
                         </div>
                         <div class="input-checkbox">
                             <input type="checkbox" id="shiping-address">
                             <label for="shiping-address">
                                 <span></span>
-                                Ship to a diffrent address?
+                                {{ __('ship to a different address') }}?
                             </label>
                             <div class="caption">
                                 <div class="form-group">
-                                    <input class="input" type="text" name="first-name" placeholder="First Name">
+                                    <input class="input" type="text" name="first-name" placeholder="{{ __('First Name') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="text" name="last-name" placeholder="Last Name">
+                                    <input class="input" type="text" name="last-name" placeholder="{{ __('Last Name') }}">
                                 </div>
                                 <div class="form-group">
                                     <input class="input" type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="text" name="address" placeholder="Address">
+                                    <input class="input" type="text" name="address" placeholder="{{ __('Address') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="text" name="city" placeholder="City">
+                                    <input class="input" type="text" name="city" placeholder="{{ __('City') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="text" name="country" placeholder="Country">
+                                    <input class="input" type="text" name="country" placeholder="{{ __('Country') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="text" name="zip-code" placeholder="ZIP Code">
+                                    <input class="input" type="text" name="zip-code" placeholder="{{ __('Zip Code') }}">
                                 </div>
                                 <div class="form-group">
-                                    <input class="input" type="tel" name="tel" placeholder="Telephone">
+                                    <input class="input" type="tel" name="tel" placeholder="{{ __('Telephone') }}">
                                 </div>
                             </div>
                         </div>
@@ -264,7 +264,7 @@
 
                     <!-- Order notes -->
                     <div class="order-notes">
-                        <textarea class="input" placeholder="Order Notes"></textarea>
+                        <textarea class="input" placeholder="{{ __('Order Notes') }}"></textarea>
                     </div>
                     <!-- /Order notes -->
                 </div>
@@ -272,11 +272,11 @@
                 <!-- Order Details -->
                 <div class="col-md-5 order-details">
                     <div class="section-title text-center">
-                        <h3 class="title">Your Order</h3>
+                        <h3 class="title">{{ __('Your Order') }}</h3>
                     </div>
                     <div class="order-summary">
                         <div class="order-col">
-                            <div><strong>PRODUCT</strong></div>
+                            <div><strong>{{ __('PRODUCT') }}</strong></div>
                             <div><strong>TOTAL</strong></div>
                         </div>
                         <div class="order-products">
@@ -290,8 +290,8 @@
                             </div>
                         </div>
                         <div class="order-col">
-                            <div>Shiping</div>
-                            <div><strong>FREE</strong></div>
+                            <div>{{ __('Envio') }}</div>
+                            <div><strong>{{ __('FREE') }}</strong></div>
                         </div>
                         <div class="order-col">
                             <div><strong>TOTAL</strong></div>
@@ -303,7 +303,7 @@
                             <input type="radio" name="payment" id="payment-1">
                             <label for="payment-1">
                                 <span></span>
-                                Direct Bank Transfer
+                                {{ __('Direct Bank Transfer') }}
                             </label>
                             <div class="caption">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -314,7 +314,7 @@
                             <input type="radio" name="payment" id="payment-2">
                             <label for="payment-2">
                                 <span></span>
-                                Cheque Payment
+                                {{ __('Cheque Payment') }}
                             </label>
                             <div class="caption">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -325,7 +325,7 @@
                             <input type="radio" name="payment" id="payment-3">
                             <label for="payment-3">
                                 <span></span>
-                                Paypal System
+                                {{ __('Paypal System') }}
                             </label>
                             <div class="caption">
                                 <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
@@ -337,7 +337,7 @@
                         <input type="checkbox" id="terms">
                         <label for="terms">
                             <span></span>
-                            I've read and accept the <a href="#">terms & conditions</a>
+                            {{ __('I've read and accept the') }}<a href="#">{{ __('Terms and conditions') }}</a>
                         </label>
                     </div>
                     <a href="#" class="primary-btn order-submit">Place order</a>
