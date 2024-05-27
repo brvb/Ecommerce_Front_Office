@@ -150,7 +150,7 @@
                                     @endfor
                                 @endif
 								</div>
-								<a class="review-link" href="#">10 Review(s) | Add your review</a>
+								<a class="review-link" href="#">10 {{ __('Review') }}(s) | {{ __('Add your review') }}</a>
 							</div>
 							<div>
 								<h3 class="product-price">
@@ -162,53 +162,52 @@
                                     </del>
                                 </h3>
                                 @if($product->stock > 0)
-								    <span class="product-available">In Stock</span>
+								    <span class="product-available">{{ __('In Stock') }}</span>
                                 @else
-                                    <span class="product-available-red">Not in Stock</span>
+                                    <span class="product-available-red">{{ __('Not In Stock') }}</span>
                                 @endif
 							</div>
 							<p>{{ $product->Description }}</p>
-
 							<div class="product-options">
 								<label>
-									Size
+									 {{ __('Size') }}
 									<select class="input-select">
 										<option value="0">X</option>
 									</select>
 								</label>
 								<label>
-									Color
+								{{ __('Color') }}
 									<select class="input-select">
-										<option value="0">Red</option>
+										<option value="0">{{ __('Red') }}</option>
 									</select>
 								</label>
 							</div>
 
 							<div class="add-to-cart">
 								<div class="qty-label">
-									Qty
+								{{ __('Quantity') }}
 									<div class="input-number">
 										<input type="number">
 										<span class="qty-up">+</span>
 										<span class="qty-down">-</span>
 									</div>
 								</div>
-								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+								<button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> {{ __('add to cart') }}</button>
 							</div>
 
 							<ul class="product-btns">
-								<li><a href="#"><i class="fa fa-heart-o"></i> add to wishlist</a></li>
-								<li><a href="#"><i class="fa fa-exchange"></i> add to compare</a></li>
+								<li><a href="#"><i class="fa fa-heart-o"></i> {{ __('add to wishlist') }}</a></li>
+								<li><a href="#"><i class="fa fa-exchange"></i> {{ __('add to compare') }}</a></li>
 							</ul>
 
 							<ul class="product-links">
-								<li>Category:</li>
+								<li>{{ __('Category') }}:</li>
 								<li><a href="#">Headphones</a></li>
-								<li><a href="#">Accessories</a></li>
+								<li><a href="#">{{ __('Accessories') }}</a></li>
 							</ul>
 
 							<ul class="product-links">
-								<li>Share:</li>
+								<li>{{ __('Share') }}:</li>
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
 								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -224,9 +223,9 @@
 						<div id="product-tab">
 							<!-- product tab nav -->
 							<ul class="tab-nav">
-								<li class="active"><a data-toggle="tab" href="#tab1">Description</a></li>
-								<li><a data-toggle="tab" href="#tab2">Details</a></li>
-								<li><a data-toggle="tab" href="#tab3">Reviews ({{$totalReviews}})</a></li>
+								<li class="active"><a data-toggle="tab" href="#tab1">{{ __('Description') }}</a></li>
+								<li><a data-toggle="tab" href="#tab2">{{ __('Details') }}</a></li>
+								<li><a data-toggle="tab" href="#tab3">{{ __('Reviews') }} ({{$totalReviews}})</a></li>
 							</ul>
 							<!-- /product tab nav -->
 
@@ -382,11 +381,11 @@
 										<div class="col-md-3">
 											<div id="review-form">
 												<form class="review-form">
-													<input class="input" type="text" placeholder="Your Name">
-													<input class="input" type="email" placeholder="Your Email">
-													<textarea class="input" placeholder="Your Review"></textarea>
+													<input class="input" type="text" placeholder="{{ __('Your Name') }}">
+													<input class="input" type="email" placeholder="{{ __('Your Email') }}">
+													<textarea class="input" placeholder="{{ __('Your Review') }}"></textarea>
 													<div class="input-rating">
-														<span>Your Rating: </span>
+														<span>{{ __('Your Rating') }}: </span>
 														<div class="stars">
 															<input id="star5" name="rating" value="5" type="radio"><label for="star5"></label>
 															<input id="star4" name="rating" value="4" type="radio"><label for="star4"></label>
@@ -395,7 +394,7 @@
 															<input id="star1" name="rating" value="1" type="radio"><label for="star1"></label>
 														</div>
 													</div>
-													<button class="primary-btn">Submit</button>
+													<button class="primary-btn">{{ __('Submit') }}</button>
 												</form>
 											</div>
 										</div>
@@ -424,7 +423,7 @@
 
 					<div class="col-md-12">
 						<div class="section-title text-center">
-							<h3 class="title">Related Products</h3>
+							<h3 class="title">{{ __('Related Products') }}</h3>
 						</div>
 					</div>
 
@@ -446,7 +445,7 @@
                                         $isNewProduct = $difference < 7;
                                     @endphp
                                     @if($isNewProduct)
-                                        <span class="new">NEW</span>
+                                        <span class="new">{{ __('New') }}</span>
                                     @endif
                                     </div>
                                 </div>
@@ -502,13 +501,13 @@
                                     @endif
                                     </div>
                                     <div class="product-btns">
-                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">add to wishlist</span></button>
-                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">add to compare</span></button>
-                                        <button class="quick-view"><a href="{{route('product',$product->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">quick view</span></a></button>
+                                        <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span class="tooltipp">{{ __('add to wishlist') }}</span></button>
+                                        <button class="add-to-compare"><i class="fa fa-exchange"></i><span class="tooltipp">{{ __('add to compare') }}</span></button>
+                                        <button class="quick-view"><a href="{{route('product',$product->id)}}"><i class="fa fa-eye"></i><span class="tooltipp">{{ __('quick view') }}</span></a></button>
                                     </div>
                                 </div>
                                 <div class="add-to-cart">
-                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
+                                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>{{ __('add to cart') }}</button>
                                 </div>
                             </div>
                         </div>

@@ -250,7 +250,7 @@
                 <div id="aside" class="col-md-3">
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Categorias</h3>
+                        <h3 class="aside-title">{{ __('Category') }}</h3>
                         <div class="checkbox-filter">
 
                             <div class="input-checkbox">
@@ -284,7 +284,7 @@
                                 <input type="checkbox" id="category-4" class="checkbox-check">
                                 <label for="category-4" class="checkbox-label">
                                     <span class="checkmark"></span>
-                                    Accessories
+                                    {{ __('Accessories') }}
                                     <small>(578)</small>
                                 </label>
                             </div>
@@ -312,7 +312,7 @@
 
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Price</h3>
+                        <h3 class="aside-title">{{ __('Price') }}</h3>
                         <div class="price-filter">
                             <div id="price-slider"></div>
                             <div class="input-number price-min">
@@ -332,7 +332,7 @@
 
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Marca</h3>
+                        <h3 class="aside-title">{{ __('Brand') }}</h3>
                         <div class="checkbox-filter">
                             <div class="input-checkbox">
                                 <input type="checkbox" id="brand-1" class="checkbox-check">
@@ -388,7 +388,7 @@
 
                     <!-- aside Widget -->
                     <div class="aside">
-                        <h3 class="aside-title">Top selling</h3>
+                        <h3 class="aside-title">{{ __('Top selling') }}</h3>
                         @foreach ($products as $product)
                             <div class="product-widget"><a href="{{ route('product', $product->id) }}">
                                 <div class="product-img">
@@ -427,10 +427,10 @@
                     <div class="store-filter clearfix">
                         <div class="store-sort">
                             <label>
-                                Sort By:
+                            {{ __('Sort By') }}:
                                 <select class="input-select">
                                     <option value="0">Popular</option>
-                                    <option value="1">Position</option>
+                                    <option value="1">{{ __('Position') }}</option>
                                 </select>
                             </label>
 
@@ -516,17 +516,16 @@
                                         </div>
                                         <div class="product-btns">
                                             <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-                                                    class="tooltipp">add to wishlist</span></button>
+                                                    class="tooltipp">{{ __('add to wishlist') }}</span></button>
                                             <button class="add-to-compare"><i class="fa fa-exchange"></i><span
-                                                    class="tooltipp">add to compare</span></button>
+                                                    class="tooltipp">{{ __('add to compare') }}</span></button>
                                             <button class="quick-view"><a href="{{ route('product', $product->id) }}"><i
-                                                        class="fa fa-eye"></i><span class="tooltipp">quick
-                                                        view</span></a></button>
+                                                        class="fa fa-eye"></i><span class="tooltipp">{{ __('quick view') }}</span></a></button>
                                         </div>
                                     </div>
                                     <div class="add-to-cart">
                                         <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
-                                            <i class="fa fa-shopping-cart"></i> add to cart
+                                            <i class="fa fa-shopping-cart"></i> {{ __('add to cart') }}
                                         </button>
 
                                     </div>
@@ -537,7 +536,7 @@
 
                     <!-- store bottom filter -->
                     <div class="store-filter clearfix">
-                        <span class="store-qty">Showing 20-100 products</span>
+                        <span class="store-qty">{{ __('Showing') }} 20-100 {{ __('products') }}</span>
                         <ul class="store-pagination">
                             <li class="active">1</li>
                             <li><a href="#">2</a></li>

@@ -286,7 +286,7 @@
         <div class="container-contacto">
             <div class="contactoInfo">
                 <div>
-                    <h3 style="font-size:24px; font-weight:500; color:#fff;">Contacto</h3>
+                    <h3 style="font-size:24px; font-weight:500; color:#fff;">{{ __('Contact') }}</h3>
                     <br>
                     <ul class="info">
                         <li>
@@ -312,38 +312,38 @@
                 </div>
             </div>
             <div class="contactoForm">
-                <h2 style="font-size:24px; font-weight:500;">Send a Message</h2>
+                <h2 style="font-size:24px; font-weight:500;">{{ __('Send a Message') }}</h2>
                 <div class="formBox">
                     <div class="inputBox w50">
                         <input type="text" name="" required>
-                        <span>First Name</span>
+                        <span>{{ __('First Name') }}</span>
                     </div>
                     <div class="inputBox w50">
                         <input type="text" required>
-                        <span>Last Name</span>
+                        <span>{{ __('Last Name') }}</span>
                     </div>
                     <div class="inputBox w100">
                         <select required>
-                            <option value="" disabled selected>Motivo</option>
-                            <option value="devolucao">Devolução de Produto</option>
-                            <option value="envio">Envio de Produto</option>
-                            <option value="localizacao">Localização de Produto</option>
+                            <option value="" disabled selected>{{ __('Reason') }}</option>
+                            <option value="devolucao">{{ __('Product Return') }}</option>
+                            <option value="envio">{{ __('Product delivery') }}</option>
+                            <option value="localizacao">{{ __('Product Localization') }}</option>
                         </select>
                     </div>
                     <div class="inputBox w50">
                         <input type="email" required>
-                        <span>Email Address</span>
+                        <span>{{ __('Email Address') }}</span>
                     </div>
                     <div class="inputBox w50">
                         <input type="text" required>
-                        <span>Mobile Number</span>
+                        <span>{{ __('Mobile Number') }}</span>
                     </div>
                     <div class="inputBox w100">
                         <textarea required></textarea>
-                        <span>Write your message here...</span>
+                        <span>{{ __('Write your message here...') }}</span>
                     </div>
                     <div class="inputBox w100">
-                        <input type="submit" value="Send">
+                        <input type="submit" value="{{ __('Send') }}">
                     </div>
                 </div>
             </div>

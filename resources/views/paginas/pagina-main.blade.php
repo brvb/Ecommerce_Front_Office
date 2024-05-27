@@ -13,8 +13,8 @@
                                 <img src="{{ asset('./assets/images/shop01.png') }}" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Imformatica<br>e Mais +</h3>
-                                <a href="#" class="cta-btn">Ver Produtos <i class="fa fa-arrow-circle-right"></i></a>
+                                <h3>{{ __('IT') }}<br>{{ __('and More') }} +</h3>
+                                <a href="#" class="cta-btn">{{ __('View Products') }} <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -27,8 +27,8 @@
                                 <img src="{{ asset('./assets/images/shop03.png') }}" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Acessorios<br>e Mais +</h3>
-                                <a href="#" class="cta-btn">Ver Produtos <i class="fa fa-arrow-circle-right"></i></a>
+                                <h3>{{ __('Accessories') }}<br>{{ __('and More') }} +</h3>
+                                <a href="#" class="cta-btn">{{ __('View Products') }} <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -41,8 +41,8 @@
                                 <img src="{{ asset('./assets/images/shop02.png') }}" alt="">
                             </div>
                             <div class="shop-body">
-                                <h3>Cameras<br>e Mais +</h3>
-                                <a href="#" class="cta-btn">Ver Produtos <i class="fa fa-arrow-circle-right"></i></a>
+                                <h3>Cameras<br>{{ __('and More') }} +</h3>
+                                <a href="#" class="cta-btn">{{ __('View Products') }} <i class="fa fa-arrow-circle-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -71,7 +71,7 @@
                                     <li class="active"><a data-toggle="tab" href="#tab1">Laptops</a></li>
                                     <li><a data-toggle="tab" href="#tab1">Smartphones</a></li>
                                     <li><a data-toggle="tab" href="#tab1">Cameras</a></li>
-                                    <li><a data-toggle="tab" href="#tab1">Accessories</a></li>
+                                    <li><a data-toggle="tab" href="#tab1">{{ __('Accessories') }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -160,18 +160,17 @@
                                                     </div>
                                                     <div class="product-btns">
                                                         <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-                                                                class="tooltipp">add to wishlist</span></button>
+                                                                class="tooltipp">{{ __('add to wishlist') }}</span></button>
                                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span
-                                                                class="tooltipp">add to compare</span></button>
+                                                                class="tooltipp">{{ __('add to compare') }}</span></button>
                                                         <button class="quick-view"><a
                                                                 href="{{ route('product', $product->id) }}"><i
-                                                                    class="fa fa-eye"></i><span class="tooltipp">quick
-                                                                    view</span></a></button>
+                                                                    class="fa fa-eye"></i><span class="tooltipp">{{ __('quick view') }}</span></a></button>
                                                     </div>
                                                 </div>
                                                 <div class="add-to-cart">
                                                     <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
-                                                        <i class="fa fa-shopping-cart"></i> add to cart
+                                                        <i class="fa fa-shopping-cart"></i> {{ __('add to cart') }}
                                                     </button>
 
                                                 </div>
@@ -205,31 +204,31 @@
                                 <li>
                                     <div>
                                         <h3 class="days">0</h3>
-                                        <span>Days</span>
+                                        <span>{{ __('Days') }}</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
                                         <h3 class="hours">0</h3>
-                                        <span>Hours</span>
+                                        <span>{{ __('Hours') }}</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
                                         <h3 class="minutes">0</h3>
-                                        <span>Mins</span>
+                                        <span>{{ __('Mins') }}</span>
                                     </div>
                                 </li>
                                 <li>
                                     <div>
                                         <h3 class="seconds">0</h3>
-                                        <span>Secs</span>
+                                        <span>{{ __('Secs') }}</span>
                                     </div>
                                 </li>
                             </ul>
                             <h2 class="text-uppercase">{{$promotions[0]->title}}</h2>
                             <p>{{$promotions[0]->description}}</p>
-                            <a class="primary-btn cta-btn" href="#">Shop now</a>
+                            <a class="primary-btn cta-btn" href="#">{{ __('Shop Now') }}</a>
                         </div>
                     </div>
                 </div>
@@ -249,13 +248,13 @@
                     <!-- section title -->
                     <div class="col-md-12">
                         <div class="section-title">
-                            <h3 class="title">Top selling</h3>
+                            <h3 class="title">{{ __('Top selling') }}</h3>
                             <div class="section-nav">
                                 <ul class="section-tab-nav tab-nav">
                                     <li class="active"><a data-toggle="tab" href="#tab2">Laptops</a></li>
                                     <li><a data-toggle="tab" href="#tab2">Smartphones</a></li>
                                     <li><a data-toggle="tab" href="#tab2">Cameras</a></li>
-                                    <li><a data-toggle="tab" href="#tab2">Accessories</a></li>
+                                    <li><a data-toggle="tab" href="#tab2">{{ __('Accessories') }}</a></li>
                                 </ul>
                             </div>
                         </div>
@@ -287,7 +286,7 @@
                                                             $isNewProduct = $difference < 7;
                                                         @endphp
                                                         @if ($isNewProduct)
-                                                            <span class="new">NEW</span>
+                                                            <span class="new">{{ __('New') }}</span>
                                                         @endif
                                                     </div>
                                                 </div>
@@ -344,18 +343,17 @@
                                                     </div>
                                                     <div class="product-btns">
                                                         <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-                                                                class="tooltipp">add to wishlist</span></button>
+                                                                class="tooltipp">{{ __('add to wishlist') }}</span></button>
                                                         <button class="add-to-compare"><i class="fa fa-exchange"></i><span
-                                                                class="tooltipp">add to compare</span></button>
+                                                                class="tooltipp">{{ __('add to compare') }}</span></button>
                                                         <button class="quick-view"><a
                                                                 href="{{ route('product', $product->id) }}"><i
-                                                                    class="fa fa-eye"></i><span class="tooltipp">quick
-                                                                    view</span></a></button>
+                                                                    class="fa fa-eye"></i><span class="tooltipp">{{ __('quick view') }}view</span></a></button>
                                                     </div>
                                                 </div>
                                                 <div class="add-to-cart">
                                                     <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
-                                                        <i class="fa fa-shopping-cart"></i> add to cart
+                                                        <i class="fa fa-shopping-cart"></i> {{ __('add to cart') }}
                                                     </button>
 
                                                 </div>

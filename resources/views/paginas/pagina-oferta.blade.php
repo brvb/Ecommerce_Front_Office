@@ -321,15 +321,15 @@
         <div class="container-fluid d-flex justify-content-end">
             <div class="dropdown-filter">
                 <div class="dropdown-filter-btn" id="dropdown-filter-btn">
-                    <span>Ordenar por</span>
-                    <p>Relevância<i class="fa-solid fa-chevron-down" id="dropdown-icon-filter"></i></p>
+                    <span>{{ __('Order by') }}</span>
+                    <p>{{ __('Relevance') }}<i class="fa-solid fa-chevron-down" id="dropdown-icon-filter"></i></p>
                 </div>
                 <div class="dropdown-filter-content" id="dropdown-filter-content">
-                <a href="#">Relevância</a>
-                <a href="#">Preço (mais baixo)</a>
-                <a href="#">Preço (mais alto)</a>
-                <a href="#">Melhor desconto</a>
-                <a href="#">Melhor avaliação</a>
+                <a href="#">{{ __('Relevance') }}</a>
+                <a href="#">{{ __('Lower price') }}</a>
+                <a href="#">{{ __('Price (highest)') }}</a>
+                <a href="#">{{ __('Best discount') }}</a>
+                <a href="#">{{ __('Best rating') }}</a>
                 </div>
             </div>
         </div>
@@ -400,17 +400,16 @@
                                 </div>
                                 <div class="product-btns">
                                     <button class="add-to-wishlist"><i class="fa fa-heart-o"></i><span
-                                            class="tooltipp">add to wishlist</span></button>
+                                            class="tooltipp">{{ __('add to wishlist') }}</span></button>
                                     <button class="add-to-compare"><i class="fa fa-exchange"></i><span
-                                            class="tooltipp">add to compare</span></button>
+                                            class="tooltipp">{{ __('add to compare') }}</span></button>
                                     <button class="quick-view"><a href="{{ route('product', $product->id) }}"><i
-                                                class="fa fa-eye"></i><span class="tooltipp">quick
-                                                view</span></a></button>
+                                                class="fa fa-eye"></i><span class="tooltipp">{{ __('quick view') }}</span></a></button>
                                 </div>
                             </div>
                             <div class="add-to-cart">
                                 <button class="add-to-cart-btn" data-product="{{ $product->id }}" data-quantity="1">
-                                    <i class="fa fa-shopping-cart"></i> add to cart
+                                    <i class="fa fa-shopping-cart"></i>{{ __('add to cart') }}
                                 </button>
 
                             </div>
