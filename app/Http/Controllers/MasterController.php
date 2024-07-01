@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Products;
+use App\Models\Promotions;
 use App\Models\Reviews;
-use App\Models\Products_filtros;
 use Illuminate\Http\Request;
 
 class MasterController extends Controller
@@ -15,7 +15,8 @@ class MasterController extends Controller
         $reviews = Reviews::all();
         $products = Products::all();
         $categories = Category::all();
-        return view('paginas.pagina-main', compact('categories','products','reviews'));
+        $promotions = Promotions::all();
+        return view('paginas.pagina-main', compact('categories','products','reviews','promotions'));
     }
     public function cartPage()
     {
@@ -46,14 +47,16 @@ class MasterController extends Controller
         $categories = Category::all();
         $reviews = Reviews::all();
         $products = Products::all();
-        return view('paginas.pagina-oferta', compact('categories','products','reviews'));
+        $promotions = Promotions::all();
+
+        return view('paginas.pagina-oferta', compact('categories','products','reviews','promotions'));
     }
     public function filtroProductsPage()
     {
         $reviews = Reviews::all();
-        $products_filtros = Products_filtros::all();
+        $products = Products::all();
         $categories = Category::all();
-        return view('paginas.pagina-filtro-products', compact('categories','products_filtros','reviews'));
+        return view('paginas.pagina-filtro-products', compact('categories','products','reviews'));
     }
     public function contactoPage()
     {

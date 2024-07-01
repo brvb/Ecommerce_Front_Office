@@ -121,7 +121,7 @@
     }
 </style>
 <main class="main-card">
-    <h2 class="title-promo"> + Mais Vendidos</h2>
+    <h2 class="title-promo"> + {{ __('Top selling') }}</h2>
     <div class="container-card">
 
         <div class="card">
@@ -129,7 +129,7 @@
             <div class="content">
                 <h3 class="title-prom">Wireless Headphones</h3>
                 <p class="parag-prom">$ 49.<span>99</span></p>
-                <button class="button-prom">ADD TO CART</button>
+                <button class="button-prom">{{ __('add to cart') }}</button>
             </div>
         </div>
         <div class="card">
@@ -137,7 +137,7 @@
             <div class="content">
                 <h3 class="title-prom">Wireless Headphones</h3>
                 <p class="parag-prom">$ 49.<span>99</span></p>
-                <button class="button-prom">ADD TO CART</button>
+                <button class="button-prom">{{ __('add to cart') }}</button>
             </div>
         </div>
         <div class="card">
@@ -145,7 +145,7 @@
             <div class="content">
                 <h3 class="title-prom">Wireless Headphones</h3>
                 <p class="parag-prom">$ 49.<span>99</span></p>
-                <button class="button-prom">ADD TO CART</button>
+                <button class="button-prom">{{ __('add to cart') }}</button>
             </div>
         </div>
     </div>

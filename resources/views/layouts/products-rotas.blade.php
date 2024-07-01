@@ -32,7 +32,7 @@
             <div class="col-md-12">
                 <ul class="breadcrumb-tree">
                     <li><a href="#">Home</a></li>
-                    <li><a href="#">Produtos</a></li>
+                    <li><a href="#">{{ __('Products') }}</a></li>
                 </ul>
             </div>
         </div>

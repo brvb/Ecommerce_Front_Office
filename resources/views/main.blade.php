@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+<html lang="{{ config('app.locale') }}">
 
 <head>
     <meta charset="utf-8">
@@ -67,7 +67,6 @@
 
     <!-- FOOTER -->
     @include('layouts.footer')
-
     <script src="{{ asset('assets/scripts/cart.js') }}"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>

@@ -8,8 +8,8 @@
             </div>
             <div class="col-12 col-lg-6">
                 <div class="input-group navbar-search" style="flex-wrap: inherit;display: flex;flex-direction: row;">
-                    <input type="text" class="form-control" placeholder="Search here">
-                    <button class="btn" type="button" id="button-addon2">Search</button>
+                    <input type="text" class="form-control" placeholder="{{ __('Search here') }}">
+                    <button class="btn" type="button" id="button-addon2">{{ __('Search') }}</button>
                 </div>
             </div>
             <div class="col-12 col-lg-2  d-flex container-icons" style="justify-content: flex-end;">
@@ -27,15 +27,22 @@
                             <div id="cart-container"></div>
                         </div>
                         <div class="cart-summary">
-                            <small><span id="total-itens-card"></span> Item(s) selected</small>
+                            <small><span id="total-itens-card"></span> {{ __('Item(s) selected') }}</small>
                             <h5>SUBTOTAL:<span id="total-price"></span></h5>
                         </div>
                         <div class="cart-btns">
-                            <a class="view-cart" href="{{ route('cart') }}">View Cart</a>
+                            <a class="view-cart" href="{{ route('cart') }}">{{ __('View Cart') }}</a>
                             <a class="checkout" href="{{ route('checkout') }}">Checkout  <i class="fa fa-arrow-circle-right"></i></a>
                         </div>
                     </div>
                 </div>
+                <!-- vincius -->
+                <div class="flag-switch icon theme" style="top: 23px;width: 21px;height: 21px;">
+                    <input type="checkbox" id="check1" class="input" onchange="window.location.href = this.checked ? '{{ route('language.switch', 'en') }}' : '{{ route('language.switch', 'pt') }}'" {{ app()->getLocale() === 'en' ? 'checked' : '' }}>
+                    <div class="icon2 icon-sun" width="24">en</div>
+                    <div class="icon2 icon-moon">pt</div>
+                </div>
+                <!-- vincius -->
                 <div class="menu-toggle icon">
                     <a href="#" id="menu-toggle-btn">
                         <i class="fa fa-bars"></i>
@@ -54,9 +61,9 @@
             <div id="responsive-nav">
                 <!-- NAV -->
                 <ul class="main-nav navbar-nav">
-                    <li class="{{ Str::contains(request()->route()->getName(), '/') ? 'active' : '' }}"><a href="{{ route('/') }}">Home</a></li>
+                    <li class="{{ Str::contains(request()->route()->getName(), '/') ? 'active' : '' }}"><a href="{{ route('/') }}">{{ __('Home') }}</a></li>
                     <li class="paste-button" style="z-index: 998;">
-                        <button class="button"><a>Categories</a></button>
+                        <button class="button"><a>{{ __('Categories') }}</a></button>
                         <div class="dropdown-contente">
                             @foreach($categories as $category)
                                 <a href="#">{{ $category->title }}</a>

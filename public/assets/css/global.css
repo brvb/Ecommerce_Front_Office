@@ -76,7 +76,7 @@ ul, ol {
 .container-icons .icon{
     position: relative;
     top: 25px;
-    margin: 0 10px 0 40px;
+    margin: 0px -16px 0 33px;
     cursor: pointer;
 }
 .cart-summary{
@@ -713,3 +713,55 @@ ul, ol {
 }
 
 
+/* vinicius */
+.theme {
+  --bg-color: #111;
+  --main-color: aliceblue;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg-color);
+  border-radius: 100%;
+  border: 1.34px solid var(--main-color);
+}
+
+.input {
+  cursor: pointer;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  opacity: 0;
+}
+
+.icon {
+  position: absolute;
+  top: calc(50% -13px);
+  left: calc(50% -13px);
+  width: 30px;
+  height: 30px;
+}
+
+.icon2.icon-moon {
+  fill: var(--main-color);
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.icon2.icon-sun {
+  stroke: var(--main-color);
+  display: none;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.input:checked ~ .icon2.icon-sun {
+  display: block;
+}
+
+.input:checked ~ .icon2.icon-moon {
+  display: none;
+}

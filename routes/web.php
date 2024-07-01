@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MasterController;
+use App\Http\Controllers\LanguageController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +15,12 @@ use App\Http\Controllers\MasterController;
 |
 */
 
+Route::get('language/{locale}', function ($locale) {
+    if (in_array($locale, ['en', 'pt'])) {
+        session(['locale' => $locale]);
+    }
+    return redirect()->back();
+})->name('language.switch');
 
 Route::get('/', [MasterController::class, 'mainPage'])->name('/');
 
