@@ -127,6 +127,7 @@ addToCartButtons.forEach(function (button) {
         });
 
         event.preventDefault();
+
     });
 });
 
@@ -254,6 +255,11 @@ function calculateTotalPrice() {
 }
 function updateTotalItems() {
     var totalItems = localStorage.length;
+
+    totalItemsSpan.textContent = totalItems;
+    totalItemsSpanCart.textContent = totalItems;
+
+    var pElement = document.getElementById('total-itens');
     var pElement = document.getElementById("total-itens");
     if (totalItems == 0) {
         pElement.classList.add("d-none");
